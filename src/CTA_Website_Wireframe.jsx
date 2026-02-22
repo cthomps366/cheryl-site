@@ -319,7 +319,7 @@ function HomePage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* WHAT I DO - 4 TIERS */}
+      {/* WHAT I DO - 5 TIERS */}
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
         <SectionLabel text="How I Work With People" />
         <h2
@@ -331,7 +331,7 @@ function HomePage({ setCurrentPage }) {
             fontWeight: 600,
           }}
         >
-          Four ways in. One goal: capability that stays.
+          Five ways in. One goal: capability that stays.
         </h2>
         <div
           className="four-tiers-grid"
@@ -367,6 +367,12 @@ function HomePage({ setCurrentPage }) {
               tag: "Starting at $25,000",
               desc: "Your team learns to build AI-powered tools for their own work. Six to eight weeks embedded with your team, building prompts, workflows, and a custom AI assistant they own.",
               audience: "Functional leaders and their teams",
+            },
+            {
+              title: "Leadership Advisory & Workshops",
+              tag: "Custom",
+              desc: "Over 40 years leading inside complex organizations. Available for leadership development, executive coaching, team workshops, and keynote speaking.",
+              audience: "Organizations and leaders seeking experienced, grounded leadership support",
             },
           ].map((offer, i) => (
             <div
@@ -746,6 +752,20 @@ function WorkWithMePage() {
       who: "Functional leaders who want their team equipped across Operations, HR, Sales, Engineering, Communications, Finance, and more",
       cta: "Book a Conversation",
     },
+    {
+      name: "Leadership Advisory & Workshops",
+      price: "Custom",
+      format: "Keynotes, workshops, coaching, and advisory engagements",
+      summary: "Over 40 years of experience leading inside complex organizations — available for leadership development, executive coaching, team workshops, and keynote speaking that isn't AI-specific.",
+      details: [
+        "Leadership development workshops tailored to your organization's challenges",
+        "Executive coaching grounded in real operational experience, not theory",
+        "Keynote speaking on leadership, navigating complexity, and building resilient teams",
+        "Available as standalone engagements or combined with AI advisory work",
+      ],
+      who: "Organizations and leaders who need experienced, grounded leadership support",
+      cta: "Book a Conversation",
+    },
   ];
 
   return (
@@ -763,7 +783,7 @@ function WorkWithMePage() {
               lineHeight: 1.25,
             }}
           >
-            Four ways in. One goal.
+            Five ways in. One goal.
           </h1>
           <p
             style={{
