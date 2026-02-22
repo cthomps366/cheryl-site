@@ -27,10 +27,12 @@ function Nav({ current, setCurrent }) {
         zIndex: 50,
         background: COLORS.white,
         borderBottom: `1px solid ${COLORS.lightGray}`,
-        padding: "16px 32px",
+        padding: "12px 16px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
+        gap: 12,
       }}
     >
       <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
@@ -57,7 +59,7 @@ function Nav({ current, setCurrent }) {
           Advisory
         </span>
       </div>
-      <div style={{ display: "flex", gap: 28 }}>
+      <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "flex-end" }}>
         {pages.map((p) => (
           <button
             key={p}
@@ -508,7 +510,7 @@ function MyStoryPage() {
             Where It Started
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
-            I got pregnant when I was 17. I was waitressing and trying to figure out what came next. My dad, who was an engineer at Ford Motor Company, convinced me to apply. I got in through food service — and from there, I talked my way into a four-year tool and die apprenticeship.
+            I didn't take the traditional path into engineering. I started waitressing as a teenager, landed a tool and die apprenticeship, and built a 33-year career at Ford and Dauch from there.
           </p>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             That apprenticeship changed everything. I graduated, worked as a journey person for a couple of years, and then a superintendent — someone who saw something in me before I fully saw it in myself — sponsored me into engineering. Not mentored. Sponsored. He put his name next to mine and opened a door I couldn't have opened alone.
