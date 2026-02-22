@@ -332,10 +332,13 @@ function HomePage({ setCurrentPage }) {
           Four ways in. One goal: capability that stays.
         </h2>
         <div
+          className="four-tiers-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: 24,
+            width: "100%",
+            maxWidth: "100%",
           }}
         >
           {[
@@ -374,6 +377,9 @@ function HomePage({ setCurrentPage }) {
                 flexDirection: "column",
                 justifyContent: "space-between",
                 minHeight: 240,
+                width: "100%",
+                maxWidth: "100%",
+                boxSizing: "border-box",
               }}
             >
               <div>

@@ -99,6 +99,18 @@ body {
   }
 }
 
+/* Four tiers grid - responsive */
+.four-tiers-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .four-tiers-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Hamburger menu styles */
 .hamburger-menu {
   display: none !important;
