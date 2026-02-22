@@ -1,3 +1,13 @@
+/* Prevent horizontal scrolling */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -71,4 +81,77 @@ body {
 
 #root {
   width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  /* Hero CTA buttons stack on mobile */
+  .hero-cta-container {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  .hero-cta-button {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none !important;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav-links-desktop {
+    display: none !important;
+  }
+  
+  .hamburger-menu {
+    display: flex !important;
+  }
+  
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid #E2E8F0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .mobile-menu-item {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #E2E8F0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #2D3748;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .mobile-menu-item:hover,
+  .mobile-menu-item:active {
+    background: #F8FAF9;
+  }
+  
+  .mobile-menu-item.active {
+    color: #0D8B8B;
+    font-weight: 600;
+    border-left: 3px solid #0D8B8B;
+  }
 }

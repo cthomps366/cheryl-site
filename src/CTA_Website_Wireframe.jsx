@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import headshot from "./assets/Cheryl-Thompson.png";
 
 const COLORS = {
@@ -19,6 +19,13 @@ const pages = ["Home", "My Story", "Work With Me", "Learning Labs", "Contact"];
 
 // ============ NAV ============
 function Nav({ current, setCurrent }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavClick = (page) => {
+    setCurrent(page);
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav
       style={{
@@ -33,6 +40,8 @@ function Nav({ current, setCurrent }) {
         alignItems: "center",
         flexWrap: "wrap",
         gap: 12,
+        width: "100%",
+        boxSizing: "border-box",
       }}
     >
       <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
@@ -59,11 +68,13 @@ function Nav({ current, setCurrent }) {
           Advisory
         </span>
       </div>
-      <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "flex-end" }}>
+      
+      {/* Desktop Navigation */}
+      <div className="nav-links-desktop" style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "flex-end" }}>
         {pages.map((p) => (
           <button
             key={p}
-            onClick={() => setCurrent(p)}
+            onClick={() => handleNavClick(p)}
             style={{
               background: "none",
               border: "none",
@@ -82,6 +93,64 @@ function Nav({ current, setCurrent }) {
           </button>
         ))}
       </div>
+
+      {/* Hamburger Button */}
+      <button
+        className="hamburger-menu"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "8px",
+          flexDirection: "column",
+          gap: 4,
+        }}
+        aria-label="Toggle menu"
+      >
+        <span
+          style={{
+            width: 24,
+            height: 2,
+            background: COLORS.charcoal,
+            transition: "all 0.3s ease",
+            transform: isMenuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
+          }}
+        />
+        <span
+          style={{
+            width: 24,
+            height: 2,
+            background: COLORS.charcoal,
+            transition: "all 0.3s ease",
+            opacity: isMenuOpen ? 0 : 1,
+          }}
+        />
+        <span
+          style={{
+            width: 24,
+            height: 2,
+            background: COLORS.charcoal,
+            transition: "all 0.3s ease",
+            transform: isMenuOpen ? "rotate(-45deg) translate(7px, -6px)" : "none",
+          }}
+        />
+      </button>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="mobile-menu">
+          {pages.map((p) => (
+            <button
+              key={p}
+              className={`mobile-menu-item ${current === p ? "active" : ""}`}
+              onClick={() => handleNavClick(p)}
+            >
+              {p}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
@@ -150,11 +219,13 @@ function HomePage({ setCurrentPage }) {
       <section
         style={{
           background: COLORS.navy,
-          padding: "100px 64px 80px",
+          padding: "clamp(60px, 8vw, 100px) clamp(16px, 4vw, 64px) clamp(40px, 6vw, 80px)",
           minHeight: 480,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
@@ -174,7 +245,7 @@ function HomePage({ setCurrentPage }) {
           <h1
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: 64,
+              fontSize: "clamp(32px, 8vw, 64px)",
               fontWeight: 700,
               color: COLORS.white,
               lineHeight: 1.2,
@@ -199,18 +270,33 @@ function HomePage({ setCurrentPage }) {
             I teach leaders and teams to build that skill with discipline and
             structure, on their real work, until it's theirs.
           </p>
-          <div style={{ display: "flex", gap: 16 }}>
-          <button
-  onClick={() =>
-    window.open(
-      "https://calendly.com/cadia-cheryl/15min?month=2026-02",
-      "_blank"
-    )
-  }
->
-  Book a Conversation
-</button>
+          <div className="hero-cta-container" style={{ display: "flex", gap: 16, flexWrap: "wrap", width: "100%", maxWidth: "100%" }}>
             <button
+              className="hero-cta-button"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/cadia-cheryl/15min?month=2026-02",
+                  "_blank"
+                )
+              }
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                padding: "16px 40px",
+                border: "none",
+                background: COLORS.teal,
+                color: COLORS.white,
+                cursor: "pointer",
+                transition: "all 0.25s ease",
+                borderRadius: 4,
+              }}
+            >
+              Book a Conversation
+            </button>
+            <button
+              className="hero-cta-button"
               onClick={() => setCurrentPage("Learning Labs")}
               style={{
                 fontFamily: "'DM Sans', sans-serif",
@@ -222,6 +308,7 @@ function HomePage({ setCurrentPage }) {
                 color: COLORS.tealLight,
                 cursor: "pointer",
                 letterSpacing: "0.04em",
+                borderRadius: 4,
               }}
             >
               Explore Learning Labs
@@ -231,7 +318,7 @@ function HomePage({ setCurrentPage }) {
       </section>
 
       {/* WHAT I DO - 4 TIERS */}
-      <section style={{ padding: "80px 64px", background: COLORS.warmWhite }}>
+      <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
         <SectionLabel text="How I Work With People" />
         <h2
           style={{
@@ -354,10 +441,12 @@ function HomePage({ setCurrentPage }) {
       {/* CREDIBILITY STRIP */}
       <section
         style={{
-          padding: "60px 64px",
+          padding: "clamp(30px, 4vw, 60px) clamp(16px, 4vw, 64px)",
           background: COLORS.cream,
           borderTop: `1px solid ${COLORS.lightGray}`,
           borderBottom: `1px solid ${COLORS.lightGray}`,
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <div
@@ -403,7 +492,7 @@ function HomePage({ setCurrentPage }) {
       </section>
 
       {/* BELIEF SECTION */}
-      <section style={{ padding: "80px 64px", background: COLORS.white }}>
+      <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.white, width: "100%", boxSizing: "border-box" }}>
         <div style={{ maxWidth: 640 }}>
           <SectionLabel text="What I Believe" />
           <h2
@@ -461,7 +550,7 @@ function HomePage({ setCurrentPage }) {
 function MyStoryPage() {
   return (
     <div>
-    <section style={{ padding: "80px 40px", background: COLORS.warmWhite }}>
+    <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 3vw, 40px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
       <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
           <SectionLabel text="My Story" />
           <h1
@@ -653,7 +742,7 @@ function WorkWithMePage() {
 
   return (
     <div>
-      <section style={{ padding: "80px 64px", background: COLORS.warmWhite }}>
+      <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
       <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
           <SectionLabel text="Work With Me" />
           <h1
@@ -828,7 +917,7 @@ function LearningLabsPage() {
 
   return (
     <div>
-      <section style={{ padding: "80px 64px", background: COLORS.warmWhite }}>
+      <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
       <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
           <SectionLabel text="Learning Labs" />
           <h1
@@ -982,7 +1071,7 @@ function ContactPage() {
     <div>
       <section
         style={{
-          padding: "100px 64px",
+          padding: "clamp(60px, 8vw, 100px) clamp(16px, 4vw, 64px)",
           background: COLORS.warmWhite,
           minHeight: 500,
           display: "flex",
@@ -1079,7 +1168,7 @@ function Footer() {
     <footer
       style={{
         background: COLORS.navy,
-        padding: "40px 64px",
+        padding: "clamp(24px, 3vw, 40px) clamp(16px, 4vw, 64px)",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -1124,6 +1213,15 @@ function Footer() {
   );
 }
 
+// ============ SCROLL TO TOP ============
+function ScrollToTop({ currentPage }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [currentPage]);
+
+  return null;
+}
+
 // ============ MAIN APP ============
 export default function App() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -1140,13 +1238,14 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
       <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
+      <ScrollToTop currentPage={currentPage} />
       <Nav current={currentPage} setCurrent={setCurrentPage} />
-      <main style={{ flex: 1 }}>{renderPage()}</main>
+      <main style={{ flex: 1, width: "100%", maxWidth: "100%", overflowX: "hidden" }}>{renderPage()}</main>
       <Footer />
     </div>
   );
