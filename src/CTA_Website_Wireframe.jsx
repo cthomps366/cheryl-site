@@ -1017,7 +1017,201 @@ function LearningLabsPage() {
                 Effective Delegation: To People and to AI
               </div>
             </div>
-            <CTAButton text="Register" />
+            <button
+              onClick={() => window.open("https://us06web.zoom.us/meeting/register/90RfRUQJSwqyztZ2Ee52mA", "_blank")}
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: 16,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                padding: "16px 40px",
+                border: "none",
+                background: COLORS.teal,
+                color: COLORS.white,
+                cursor: "pointer",
+                transition: "all 0.25s ease",
+                borderRadius: 4,
+              }}
+            >
+              Register
+            </button>
+          </div>
+
+          <h2
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: 24,
+              color: COLORS.navy,
+              margin: "0 0 32px 0",
+              fontWeight: 600,
+            }}
+          >
+            Upcoming Labs & Registration
+          </h2>
+
+          <div style={{ marginBottom: 48 }}>
+            {[
+              {
+                title: "Effective Delegation: To People and to AI",
+                date: "Tuesday, Feb 24, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/90RfRUQJSwqyztZ2Ee52mA",
+              },
+              {
+                title: "Handle Any Sales Objection with Confidence",
+                date: "Tuesday, Mar 3, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/0lV_zSwDRTuixb4oF3vNow",
+              },
+              {
+                title: "SOPs and Training Materials in Half the Time",
+                date: "Tuesday, Mar 10, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/UVFRmOOoS6CAkogQjUPGLg",
+              },
+              {
+                title: "Self-Care as a Leadership Strategy",
+                date: "Tuesday, Mar 17, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/wjEf-QGuQ5-8OwcDuzzuVg",
+              },
+              {
+                title: "Reaching the Floor: Communication That Works Without Email",
+                date: "Tuesday, Mar 24, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/zB56J9U8QyWtkpihy7sFRA",
+              },
+              {
+                title: "Career Pathing for Leaders: Develop Your People Without Losing Them",
+                date: "Tuesday, Mar 31, 2026",
+                time: "1:00–3:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/0V8Rd9N4TKmt1eS7OO3Rcw",
+                category: "Talent Retention — Focuses on practical, leader-driven career pathing that increases visibility into growth opportunities and strengthens retention without adding administrative burden.",
+              },
+              {
+                title: "AI Behind the Scenes: What Smart Leaders Are Doing Differently",
+                date: "Tuesday, Apr 7, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/ttyTqX8WSHit_XYs5FEh-w",
+              },
+              {
+                title: "Project Management: Keep Projects Moving Without Chasing People",
+                date: "Tuesday, Apr 14, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/wgra9YJRTiywdNO-jLOxUA",
+              },
+              {
+                title: "Change Management: Get Your Team to Adopt New Tools",
+                date: "Tuesday, Apr 21, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/2AUf6rhzQpSbrfw8bPKZ2w",
+              },
+              {
+                title: "Engineering Communication: Translate Technical Work for Non-Technical Audiences",
+                date: "Tuesday, Apr 28, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/jtAVkHGjSzSVHHMi82e59g",
+                category: "Technical Communication — Helps technical professionals translate complex work into clear, decision-ready messages for non-technical stakeholders.",
+              },
+              {
+                title: "Procurement: Faster Supplier Communication and Documentation",
+                date: "Tuesday, May 5, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/5VKWI2eQSEiaNpAaPaRm5g",
+              },
+              {
+                title: "Internal Communications: Messages That Actually Get Read",
+                date: "Tuesday, May 12, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/qEUblU1eT3eVGG0tTNgDcQ",
+              },
+              {
+                title: "ERG Leaders: From Overworked to Strategic",
+                date: "Tuesday, May 19, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/L_9q7AF8R_mk6jx4j6lSkQ",
+              },
+            ].map((lab, i) => (
+              <div
+                key={i}
+                style={{
+                  background: COLORS.white,
+                  border: `1px solid ${COLORS.lightGray}`,
+                  padding: "24px",
+                  marginBottom: 16,
+                  borderRadius: 4,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    flexWrap: "wrap",
+                    gap: 16,
+                    marginBottom: 12,
+                  }}
+                >
+                  <div style={{ flex: 1, minWidth: "250px" }}>
+                    <h3
+                      style={{
+                        fontFamily: "'Playfair Display', Georgia, serif",
+                        fontSize: 18,
+                        color: COLORS.navy,
+                        margin: "0 0 8px 0",
+                        fontWeight: 600,
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {lab.title}
+                    </h3>
+                    <div
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: 14,
+                        color: COLORS.mediumGray,
+                        marginBottom: lab.category ? 8 : 0,
+                      }}
+                    >
+                      {lab.date} | {lab.time}
+                    </div>
+                    {lab.category && (
+                      <div
+                        style={{
+                          fontFamily: "'DM Sans', sans-serif",
+                          fontSize: 13,
+                          color: COLORS.charcoal,
+                          fontStyle: "italic",
+                          marginTop: 8,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {lab.category}
+                      </div>
+                    )}
+                  </div>
+                  <button
+                    onClick={() => window.open(lab.link, "_blank")}
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      letterSpacing: "0.04em",
+                      padding: "12px 24px",
+                      border: "none",
+                      background: COLORS.teal,
+                      color: COLORS.white,
+                      cursor: "pointer",
+                      transition: "all 0.25s ease",
+                      borderRadius: 4,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Register →
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
 
           <h2
