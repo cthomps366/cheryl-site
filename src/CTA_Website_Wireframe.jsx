@@ -29,8 +29,10 @@ function Nav({ current, setCurrent }) {
   return (
     <nav
       style={{
-        position: "sticky",
+        position: "fixed",
         top: 0,
+        left: 0,
+        right: 0,
         zIndex: 50,
         background: COLORS.white,
         borderBottom: `1px solid ${COLORS.lightGray}`,
@@ -1251,7 +1253,7 @@ export default function App() {
       />
       <ScrollToTop currentPage={currentPage} />
       <Nav current={currentPage} setCurrent={setCurrentPage} />
-      <main style={{ flex: 1, width: "100%", maxWidth: "100%", overflowX: "hidden" }}>{renderPage()}</main>
+      <main style={{ flex: 1, width: "100%", maxWidth: "100%", overflowX: "hidden", paddingTop: "70px" }}>{renderPage()}</main>
       <Footer />
     </div>
   );
