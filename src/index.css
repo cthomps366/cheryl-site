@@ -167,3 +167,14 @@ body {
     border-left: 3px solid #0D8B8B;
   }
 }
+
+/* Contact Page Styles */
+.contact-cta-button:hover {
+  background: #0a6b6b !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16) !important;
+}
+
+.contact-email-link:hover {
+  color: #b8942a !important;
+  text-decoration: underline !important;
+}

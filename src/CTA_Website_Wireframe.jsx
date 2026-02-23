@@ -1683,25 +1683,9 @@ function ContactPage() {
             A 15-minute conversation to explore what you're working on, where AI could help, and whether working together makes sense. No pressure, no pitch — just an honest conversation about what's possible.
           </p>
           <GoldDivider />
-          <div
-            style={{
-              background: COLORS.white,
-              border: `1px solid ${COLORS.lightGray}`,
-              padding: "48px 40px",
-              textAlign: "center",
-              marginBottom: 40,
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 18,
-                color: COLORS.mediumGray,
-                marginBottom: 24,
-              }}
-            >
-                       </div>
+          <div style={{ marginTop: 32, marginBottom: 40, textAlign: "center" }}>
             <button
+              className="contact-cta-button"
               onClick={() =>
                 window.open(
                   "https://calendly.com/cadia-cheryl/15min?month=2026-02",
@@ -1720,6 +1704,7 @@ function ContactPage() {
                 cursor: "pointer",
                 transition: "all 0.25s ease",
                 borderRadius: 4,
+                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
               }}
             >
               Book a Conversation
@@ -1729,11 +1714,22 @@ function ContactPage() {
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 16,
-              color: COLORS.tealLight,
+              color: COLORS.gold,
               lineHeight: 1.7,
+              textAlign: "center",
             }}
           >
-            Prefer email? Reach me at cheryl@cherylthompson.net
+            Prefer email? Reach me at{" "}
+            <a
+              href="mailto:cheryl@cherylthompson.net"
+              className="contact-email-link"
+              style={{
+                color: COLORS.gold,
+                textDecoration: "none",
+              }}
+            >
+              cheryl@cherylthompson.net
+            </a>
           </p>
         </div>
       </section>
