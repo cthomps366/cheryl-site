@@ -1045,6 +1045,24 @@ function WorkWithMePage() {
 function LearningLabsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // Function to parse date string and convert to Date object
+  const parseDate = (dateString) => {
+    // Format: "Tuesday, Jan 27, 2026" or "Tuesday, Feb 3, 2026"
+    const months = {
+      Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+      Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+    };
+    const parts = dateString.split(', ');
+    if (parts.length >= 3) {
+      const monthDay = parts[1].split(' ');
+      const month = months[monthDay[0]];
+      const day = parseInt(monthDay[1]);
+      const year = parseInt(parts[2]);
+      return new Date(year, month, day);
+    }
+    return null;
+  };
+
   // Function to get category for a lab based on title
   const getLabCategory = (title) => {
     // Leadership & Career
@@ -1202,28 +1220,24 @@ function LearningLabsPage() {
                 date: "Tuesday, Jan 27, 2026",
                 time: "12:00–1:00 PM ET",
                 recordingLink: "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74",
-                isPast: true,
               },
               {
                 title: "Problem-Solving Under Pressure: Root Cause Without the Paperwork",
                 date: "Tuesday, Feb 3, 2026",
                 time: "12:00–1:00 PM ET",
                 recordingLink: "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74",
-                isPast: true,
               },
               {
                 title: "Finance for Leaders: Read the Numbers, Make the Case",
                 date: "Tuesday, Feb 17, 2026",
                 time: "12:00–1:00 PM ET",
                 recordingLink: "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74",
-                isPast: true,
               },
               {
                 title: "Effective Delegation: To People and to AI",
                 date: "Tuesday, Feb 24, 2026",
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/90RfRUQJSwqyztZ2Ee52mA",
-                isNext: true,
               },
               {
                 title: "Handle Any Sales Objection with Confidence",
@@ -1360,24 +1374,83 @@ function LearningLabsPage() {
                 link: "https://us06web.zoom.us/meeting/register/UT_M5gz2TbOGFwnLCk7Xag",
               },
             ]
-              .map((lab) => ({
-                ...lab,
-                labCategory: getLabCategory(lab.title),
-              }))
+              .map((lab) => {
+                const labDate = parseDate(lab.date);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0); // Reset time to compare dates only
+                const isPast = labDate && labDate < today;
+                
+                return {
+                  ...lab,
+                  labCategory: getLabCategory(lab.title),
+                  parsedDate: labDate,
+                  isPast: isPast,
+                  recordingLink: lab.recordingLink || (isPast ? "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74" : undefined),
+                };
+              })
               .filter((lab) => selectedCategory === "All" || lab.labCategory === selectedCategory)
-              .map((lab, i) => (
-              <div
-                key={i}
-                style={{
-                  background: lab.isNext ? COLORS.cream : lab.isPast ? COLORS.warmWhite : COLORS.white,
-                  border: `1px solid ${lab.isNext ? COLORS.gold : lab.isPast ? COLORS.lightGray : COLORS.lightGray}`,
-                  padding: "24px",
-                  marginBottom: 16,
-                  borderRadius: 4,
-                  position: "relative",
-                  opacity: lab.isPast ? 0.95 : 1,
-                }}
-              >
+              .sort((a, b) => {
+                if (!a.parsedDate || !b.parsedDate) return 0;
+                const aIsPast = a.isPast;
+                const bIsPast = b.isPast;
+                
+                // Upcoming sessions first (ascending)
+                if (!aIsPast && !bIsPast) {
+                  return a.parsedDate - b.parsedDate;
+                }
+                // Past sessions after (descending)
+                if (aIsPast && bIsPast) {
+                  return b.parsedDate - a.parsedDate;
+                }
+                // Upcoming before past
+                return aIsPast ? 1 : -1;
+              })
+              .map((lab, i, arr) => {
+                // Find the first upcoming session to mark as "Next"
+                const firstUpcoming = arr.find(l => !l.isPast);
+                const isNext = !lab.isPast && lab.parsedDate && firstUpcoming && lab.parsedDate.getTime() === firstUpcoming.parsedDate.getTime();
+                return { ...lab, isNext };
+              })
+              .reduce((acc, lab, i, arr) => {
+                // Add separator before first past session
+                if (i > 0 && !arr[i - 1].isPast && lab.isPast) {
+                  acc.push({ isSeparator: true });
+                }
+                acc.push(lab);
+                return acc;
+              }, [])
+              .map((lab, i) => {
+                if (lab.isSeparator) {
+                  return (
+                    <div key={`separator-${i}`} style={{ marginTop: 48, marginBottom: 24 }}>
+                      <div
+                        style={{
+                          fontFamily: "'DM Sans', sans-serif",
+                          fontSize: 11,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.15em",
+                          color: COLORS.mediumGray,
+                          fontWeight: 600,
+                        }}
+                      >
+                        Past Sessions
+                      </div>
+                    </div>
+                  );
+                }
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      background: lab.isNext ? COLORS.cream : lab.isPast ? COLORS.warmWhite : COLORS.white,
+                      border: `1px solid ${lab.isNext ? COLORS.gold : lab.isPast ? COLORS.lightGray : COLORS.lightGray}`,
+                      padding: "24px",
+                      marginBottom: 16,
+                      borderRadius: 4,
+                      position: "relative",
+                      opacity: lab.isPast ? 0.95 : 1,
+                    }}
+                  >
                 {lab.isNext && (
                   <div
                     style={{
@@ -1527,8 +1600,9 @@ function LearningLabsPage() {
                     </button>
                   )}
                 </div>
-              </div>
-            ))}
+                  </div>
+                );
+              })}
           </div>
 
           <div
