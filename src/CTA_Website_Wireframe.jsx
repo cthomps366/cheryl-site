@@ -817,7 +817,7 @@ function MyStoryPage() {
 }
 
 // ============ WORK WITH ME PAGE ============
-function WorkWithMePage() {
+function WorkWithMePage({ setCurrentPage }) {
   const tiers = [
     {
       name: "Learning Labs",
@@ -1025,12 +1025,17 @@ function WorkWithMePage() {
                 For: {tier.who}
               </div>
               <button
-                onClick={tier.cta === "Book a Conversation" ? () =>
-                  window.open(
-                    "https://calendly.com/cadia-cheryl/15min?month=2026-02",
-                    "_blank"
-                  )
-                : undefined}
+                onClick={
+                  tier.cta === "Book a Conversation"
+                    ? () =>
+                        window.open(
+                          "https://calendly.com/cadia-cheryl/15min?month=2026-02",
+                          "_blank"
+                        )
+                    : tier.cta === "See the Schedule"
+                    ? () => setCurrentPage("Learning Labs")
+                    : undefined
+                }
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: 13,
@@ -1327,25 +1332,25 @@ function LearningLabsPage() {
                 link: "https://us06web.zoom.us/meeting/register/L_9q7AF8R_mk6jx4j6lSkQ",
               },
               {
-                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                title: "AI Learning Lab (Best Of / TBD)",
                 date: "Tuesday, Aug 4, 2026",
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/aBVOjUWYSamYOvGFHSwaVA",
               },
               {
-                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                title: "AI Learning Lab (Best Of / TBD)",
                 date: "Tuesday, Aug 11, 2026",
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/KX1WZ1X0TYCMll_L3OOApA",
               },
               {
-                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                title: "AI Learning Lab (Best Of / TBD)",
                 date: "Tuesday, Aug 18, 2026",
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/8pHkiRAfTh6gbiRB2dmcuA",
               },
               {
-                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                title: "AI Learning Lab (Best Of / TBD)",
                 date: "Tuesday, Aug 25, 2026",
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/f0uc8kb_T56O1Lur0O9Img",
@@ -1805,7 +1810,7 @@ export default function App() {
     switch (currentPage) {
       case "Home": return <HomePage setCurrentPage={setCurrentPage} />;
       case "My Story": return <MyStoryPage />;
-      case "Work With Me": return <WorkWithMePage />;
+      case "Work With Me": return <WorkWithMePage setCurrentPage={setCurrentPage} />;
       case "Learning Labs": return <LearningLabsPage />;
       case "Contact": return <ContactPage />;
       default: return <HomePage />;
