@@ -788,15 +788,28 @@ function MyStoryPage() {
 
           <GoldDivider />
           <button
-  onClick={() =>
-    window.open(
-      "https://calendly.com/cadia-cheryl/15min?month=2026-02",
-      "_blank"
-    )
-  }
->
-  Book a Conversation
-</button>
+            onClick={() =>
+              window.open(
+                "https://calendly.com/cadia-cheryl/15min?month=2026-02",
+                "_blank"
+              )
+            }
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 16,
+              fontWeight: 600,
+              letterSpacing: "0.04em",
+              padding: "16px 40px",
+              border: "none",
+              background: COLORS.teal,
+              color: COLORS.white,
+              cursor: "pointer",
+              transition: "all 0.25s ease",
+              borderRadius: 4,
+            }}
+          >
+            Book a Conversation
+          </button>
         </div>
       </section>
     </div>
@@ -1702,8 +1715,8 @@ function ContactPage() {
                 letterSpacing: "0.04em",
                 padding: "16px 40px",
                 border: "none",
-                background: COLORS.gold,
-                color: COLORS.navy,
+                background: COLORS.teal,
+                color: COLORS.white,
                 cursor: "pointer",
                 transition: "all 0.25s ease",
                 borderRadius: 4,
