@@ -732,6 +732,61 @@ function MyStoryPage() {
           </div>
 
           <GoldDivider />
+
+          {/* Featured Interview Video */}
+          <div style={{ margin: "48px 0" }}>
+            <SectionLabel text="Featured" />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: 24,
+                marginBottom: 16,
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  maxWidth: 720,
+                  paddingBottom: "56.25%", // 16:9 aspect ratio
+                  height: 0,
+                  overflow: "hidden",
+                }}
+              >
+                <iframe
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
+                  src="https://www.youtube.com/embed/RG4kf5ZcK1U"
+                  title="Featured Interview"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: 14,
+                color: COLORS.mediumGray,
+                textAlign: "center",
+                margin: 0,
+                maxWidth: 720,
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
+              A conversation with John McElroy on AI, how leaders are using it, and why it matters now.
+            </p>
+          </div>
+
+          <GoldDivider />
           <button
   onClick={() =>
     window.open(
