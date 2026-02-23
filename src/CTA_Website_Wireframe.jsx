@@ -1131,6 +1131,66 @@ function LearningLabsPage() {
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/L_9q7AF8R_mk6jx4j6lSkQ",
               },
+              {
+                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                date: "Tuesday, Aug 4, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/aBVOjUWYSamYOvGFHSwaVA",
+              },
+              {
+                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                date: "Tuesday, Aug 11, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/KX1WZ1X0TYCMll_L3OOApA",
+              },
+              {
+                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                date: "Tuesday, Aug 18, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/8pHkiRAfTh6gbiRB2dmcuA",
+              },
+              {
+                title: "CADIA AI Learning Lab (Best Of / TBD)",
+                date: "Tuesday, Aug 25, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/f0uc8kb_T56O1Lur0O9Img",
+              },
+              {
+                title: "AI Behind the Scenes: What Smart Leaders Are Doing Differently",
+                date: "Tuesday, Sep 8, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/gQVkVxG1Q4-4AUxifpNSBA",
+              },
+              {
+                title: "Effective Delegation: To People and to AI",
+                date: "Tuesday, Sep 22, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/iI9dlioUQMOrJCA4iqVgbg",
+              },
+              {
+                title: "Change Management: Get Your Team to Adopt New Tools",
+                date: "Tuesday, Oct 6, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/hiQDFbizTV29CKw6BG93xA",
+              },
+              {
+                title: "SOPs and Training Materials in Half the Time",
+                date: "Tuesday, Oct 20, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/DHhcbVX3Q9efjtVoyM1hig",
+              },
+              {
+                title: "Project Management: Keep Projects Moving Without Chasing People",
+                date: "Tuesday, Nov 3, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/q0r1CYE3Q2yDRiHCpTnQZQ",
+              },
+              {
+                title: "Internal Communications: Messages That Actually Get Read",
+                date: "Tuesday, Nov 17, 2026",
+                time: "12:00–1:00 PM ET",
+                link: "https://us06web.zoom.us/meeting/register/UT_M5gz2TbOGFwnLCk7Xag",
+              },
             ].map((lab, i) => (
               <div
                 key={i}
