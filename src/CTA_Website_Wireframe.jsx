@@ -937,35 +937,48 @@ function LearningLabsPage() {
 
   // Function to get category for a lab based on title
   const getLabCategory = (title) => {
-    if (title.includes("Find Your Sponsor") || title.includes("Sponsor")) return "Career Development";
-    if (title.includes("Finance for Leaders")) return "Business Acumen";
-    if (title.includes("Problem-Solving") || title.includes("SOPs") || title.includes("Reaching the Floor")) return "Operations Excellence";
-    if (title.includes("Effective Delegation") || title.includes("Change Management") || title.includes("Self-Care")) return "Leadership Development";
+    // Leadership & Career
+    if (title.includes("Find Your Sponsor") || title.includes("Sponsor")) return "Leadership & Career";
+    if (title.includes("Effective Delegation")) return "Leadership & Career";
+    if (title.includes("Self-Care")) return "Leadership & Career";
+    if (title.includes("Career Pathing")) return "Leadership & Career";
+    if (title.includes("Change Management")) return "Leadership & Career";
+    
+    // Operations & Quality
+    if (title.includes("Problem-Solving")) return "Operations & Quality";
+    if (title.includes("SOPs")) return "Operations & Quality";
+    if (title.includes("Reaching the Floor")) return "Operations & Quality";
+    
+    // Business & Finance
+    if (title.includes("Finance for Leaders")) return "Business & Finance";
+    
+    // AI Fluency
     if (title.includes("AI Behind the Scenes")) return "AI Fluency";
-    if (title.includes("Sales Objection")) return "Sales Performance";
-    if (title.includes("ERG Leaders") || title.includes("ERG")) return "ERG Leadership";
-    if (title.includes("Career Pathing")) return "Talent Retention";
-    if (title.includes("Project Management")) return "Project Excellence";
-    if (title.includes("Engineering Communication")) return "Technical Communication";
-    if (title.includes("Procurement")) return "Supply Chain Excellence";
-    if (title.includes("Internal Communications")) return "Organizational Communication";
+    
+    // Communications
+    if (title.includes("Engineering Communication")) return "Communications";
+    if (title.includes("Internal Communications")) return "Communications";
+    
+    // Sales & Procurement
+    if (title.includes("Sales Objection")) return "Sales & Procurement";
+    if (title.includes("Procurement")) return "Sales & Procurement";
+    
+    // ERG & Project Leadership
+    if (title.includes("ERG Leaders") || title.includes("ERG")) return "ERG & Project Leadership";
+    if (title.includes("Project Management")) return "ERG & Project Leadership";
+    
     return null;
   };
 
   const filterCategories = [
     "All",
-    "Career Development",
-    "Business Acumen",
-    "Operations Excellence",
-    "Leadership Development",
+    "Leadership & Career",
+    "Operations & Quality",
+    "Business & Finance",
     "AI Fluency",
-    "Sales Performance",
-    "ERG Leadership",
-    "Talent Retention",
-    "Project Excellence",
-    "Technical Communication",
-    "Supply Chain Excellence",
-    "Organizational Communication",
+    "Communications",
+    "Sales & Procurement",
+    "ERG & Project Leadership",
   ];
 
   return (
@@ -1007,6 +1020,26 @@ function LearningLabsPage() {
           >
             Platform-agnostic: everything works in ChatGPT, Copilot, Claude, Gemini — whatever you have access to.
           </p>
+
+          <div style={{ marginBottom: 32 }}>
+            <a
+              href="https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: 16,
+                color: COLORS.teal,
+                textDecoration: "none",
+                fontWeight: 500,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 4,
+              }}
+            >
+              Looking for past sessions? Browse the full Learning Lab library →
+            </a>
+          </div>
 
           <h2
             style={{
