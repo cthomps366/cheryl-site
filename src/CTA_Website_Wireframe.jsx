@@ -1714,7 +1714,7 @@ function ContactPage() {
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 16,
-              color: COLORS.navy,
+              color: "#2C5282",
               lineHeight: 1.7,
               textAlign: "center",
             }}
@@ -1724,7 +1724,7 @@ function ContactPage() {
               href="mailto:cheryl@cherylthompson.net"
               className="contact-email-link"
               style={{
-                color: COLORS.navy,
+                color: "#2C5282",
                 textDecoration: "none",
               }}
             >
