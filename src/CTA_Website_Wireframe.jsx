@@ -505,6 +505,61 @@ function HomePage({ setCurrentPage }) {
         </div>
       </section>
 
+      {/* FEATURED INTERVIEW SECTION */}
+      <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.white, width: "100%", boxSizing: "border-box" }}>
+        <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
+          <SectionLabel text="Featured" />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: 24,
+              marginBottom: 16,
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: 720,
+                paddingBottom: "56.25%", // 16:9 aspect ratio
+                height: 0,
+                overflow: "hidden",
+              }}
+            >
+              <iframe
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  border: "none",
+                }}
+                src="https://www.youtube.com/embed/RG4kf5ZcK1U"
+                title="Featured Interview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 14,
+              color: COLORS.mediumGray,
+              textAlign: "center",
+              margin: 0,
+              maxWidth: 720,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            A conversation with John McElroy on AI, how leaders are using it, and why it matters now.
+          </p>
+        </div>
+      </section>
+
       {/* BELIEF SECTION */}
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.white, width: "100%", boxSizing: "border-box" }}>
         <div style={{ maxWidth: 640 }}>
