@@ -1143,6 +1143,27 @@ function LearningLabsPage() {
           <div style={{ marginBottom: 48 }}>
             {[
               {
+                title: "Find Your Sponsor (Not Just a Mentor)",
+                date: "Tuesday, Jan 27, 2026",
+                time: "12:00–1:00 PM ET",
+                recordingLink: "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74",
+                isPast: true,
+              },
+              {
+                title: "Problem-Solving Under Pressure: Root Cause Without the Paperwork",
+                date: "Tuesday, Feb 3, 2026",
+                time: "12:00–1:00 PM ET",
+                recordingLink: "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74",
+                isPast: true,
+              },
+              {
+                title: "Finance for Leaders: Read the Numbers, Make the Case",
+                date: "Tuesday, Feb 17, 2026",
+                time: "12:00–1:00 PM ET",
+                recordingLink: "https://flowery-jobaria-ab2.notion.site/CADIA-AI-Learning-Lab-Library-23b39d22ba994fdb8172bf7bd08e0100?pvs=74",
+                isPast: true,
+              },
+              {
                 title: "Effective Delegation: To People and to AI",
                 date: "Tuesday, Feb 24, 2026",
                 time: "12:00–1:00 PM ET",
@@ -1293,12 +1314,13 @@ function LearningLabsPage() {
               <div
                 key={i}
                 style={{
-                  background: lab.isNext ? COLORS.cream : COLORS.white,
-                  border: `1px solid ${lab.isNext ? COLORS.gold : COLORS.lightGray}`,
+                  background: lab.isNext ? COLORS.cream : lab.isPast ? COLORS.warmWhite : COLORS.white,
+                  border: `1px solid ${lab.isNext ? COLORS.gold : lab.isPast ? COLORS.lightGray : COLORS.lightGray}`,
                   padding: "24px",
                   marginBottom: 16,
                   borderRadius: 4,
                   position: "relative",
+                  opacity: lab.isPast ? 0.95 : 1,
                 }}
               >
                 {lab.isNext && (
@@ -1369,9 +1391,30 @@ function LearningLabsPage() {
                         fontSize: 14,
                         color: COLORS.mediumGray,
                         marginBottom: lab.category ? 8 : 0,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 8,
+                        flexWrap: "wrap",
                       }}
                     >
-                      {lab.date} | {lab.time}
+                      <span>{lab.date} | {lab.time}</span>
+                      {lab.isPast && (
+                        <span
+                          style={{
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontSize: 11,
+                            fontWeight: 600,
+                            textTransform: "uppercase",
+                            letterSpacing: "0.1em",
+                            color: COLORS.mediumGray,
+                            background: COLORS.lightGray,
+                            padding: "2px 8px",
+                            borderRadius: 4,
+                          }}
+                        >
+                          Past Session
+                        </span>
+                      )}
                     </div>
                     {lab.category && (
                       <div
@@ -1388,25 +1431,46 @@ function LearningLabsPage() {
                       </div>
                     )}
                   </div>
-                  <button
-                    onClick={() => window.open(lab.link, "_blank")}
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 14,
-                      fontWeight: 600,
-                      letterSpacing: "0.04em",
-                      padding: "12px 24px",
-                      border: "none",
-                      background: COLORS.teal,
-                      color: COLORS.white,
-                      cursor: "pointer",
-                      transition: "all 0.25s ease",
-                      borderRadius: 4,
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Register →
-                  </button>
+                  {lab.isPast ? (
+                    <a
+                      href={lab.recordingLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: 14,
+                        color: COLORS.teal,
+                        textDecoration: "none",
+                        fontWeight: 500,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 4,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      View the recording and playbook →
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => window.open(lab.link, "_blank")}
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: 14,
+                        fontWeight: 600,
+                        letterSpacing: "0.04em",
+                        padding: "12px 24px",
+                        border: "none",
+                        background: COLORS.teal,
+                        color: COLORS.white,
+                        cursor: "pointer",
+                        transition: "all 0.25s ease",
+                        borderRadius: 4,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      Register →
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
