@@ -933,14 +933,39 @@ function WorkWithMePage() {
 
 // ============ LEARNING LABS PAGE ============
 function LearningLabsPage() {
-  const categories = [
-    { name: "Career Development", topics: ["Find Your Sponsor (Not Just a Mentor)"] },
-    { name: "Business Acumen", topics: ["Finance for Leaders: Read the Numbers, Make the Case"] },
-    { name: "Operations Excellence", topics: ["Problem-Solving Under Pressure", "SOPs and Training Materials in Half the Time", "Reaching the Floor: Communication That Works Without Email"] },
-    { name: "Leadership Development", topics: ["Effective Delegation: To People and to AI", "Change Management: Get Your Team to Adopt New Tools", "Self-Care as a Leadership Strategy"] },
-    { name: "AI Fluency", topics: ["AI Behind the Scenes: What Smart Leaders Are Doing Differently"] },
-    { name: "Sales Performance", topics: ["Handle Any Sales Objection with Confidence"] },
-    { name: "More Topics", topics: ["ERG Leadership, Career Pathing, Project Management, Engineering Communication, Procurement, Internal Communications"] },
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Function to get category for a lab based on title
+  const getLabCategory = (title) => {
+    if (title.includes("Find Your Sponsor") || title.includes("Sponsor")) return "Career Development";
+    if (title.includes("Finance for Leaders")) return "Business Acumen";
+    if (title.includes("Problem-Solving") || title.includes("SOPs") || title.includes("Reaching the Floor")) return "Operations Excellence";
+    if (title.includes("Effective Delegation") || title.includes("Change Management") || title.includes("Self-Care")) return "Leadership Development";
+    if (title.includes("AI Behind the Scenes")) return "AI Fluency";
+    if (title.includes("Sales Objection")) return "Sales Performance";
+    if (title.includes("ERG Leaders") || title.includes("ERG")) return "ERG Leadership";
+    if (title.includes("Career Pathing")) return "Talent Retention";
+    if (title.includes("Project Management")) return "Project Excellence";
+    if (title.includes("Engineering Communication")) return "Technical Communication";
+    if (title.includes("Procurement")) return "Supply Chain Excellence";
+    if (title.includes("Internal Communications")) return "Organizational Communication";
+    return null;
+  };
+
+  const filterCategories = [
+    "All",
+    "Career Development",
+    "Business Acumen",
+    "Operations Excellence",
+    "Leadership Development",
+    "AI Fluency",
+    "Sales Performance",
+    "ERG Leadership",
+    "Talent Retention",
+    "Project Excellence",
+    "Technical Communication",
+    "Supply Chain Excellence",
+    "Organizational Communication",
   ];
 
   return (
@@ -983,71 +1008,49 @@ function LearningLabsPage() {
             Platform-agnostic: everything works in ChatGPT, Copilot, Claude, Gemini — whatever you have access to.
           </p>
 
-          <div
-            style={{
-              background: COLORS.navy,
-              padding: "32px 36px",
-              marginBottom: 48,
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: 16,
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: 20,
-                  color: COLORS.white,
-                  fontWeight: 600,
-                  marginBottom: 4,
-                }}
-              >
-                Next Lab: February 24, 2026
-              </div>
-              <div
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 18,
-                  color: COLORS.lightGray,
-                }}
-              >
-                Effective Delegation: To People and to AI
-              </div>
-            </div>
-            <button
-              onClick={() => window.open("https://us06web.zoom.us/meeting/register/90RfRUQJSwqyztZ2Ee52mA", "_blank")}
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 16,
-                fontWeight: 600,
-                letterSpacing: "0.04em",
-                padding: "16px 40px",
-                border: "none",
-                background: COLORS.teal,
-                color: COLORS.white,
-                cursor: "pointer",
-                transition: "all 0.25s ease",
-                borderRadius: 4,
-              }}
-            >
-              Register
-            </button>
-          </div>
-
           <h2
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: 24,
               color: COLORS.navy,
-              margin: "0 0 32px 0",
+              margin: "0 0 24px 0",
               fontWeight: 600,
             }}
           >
             Upcoming Labs & Registration
           </h2>
+
+          {/* Category Filter Buttons */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 8,
+              marginBottom: 32,
+            }}
+          >
+            {filterCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: 13,
+                  fontWeight: selectedCategory === cat ? 600 : 400,
+                  padding: "8px 16px",
+                  border: `1.5px solid ${selectedCategory === cat ? COLORS.teal : COLORS.lightGray}`,
+                  background: selectedCategory === cat ? COLORS.teal : COLORS.white,
+                  color: selectedCategory === cat ? COLORS.white : COLORS.charcoal,
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                  borderRadius: 4,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
 
           <div style={{ marginBottom: 48 }}>
             {[
@@ -1056,6 +1059,7 @@ function LearningLabsPage() {
                 date: "Tuesday, Feb 24, 2026",
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/90RfRUQJSwqyztZ2Ee52mA",
+                isNext: true,
               },
               {
                 title: "Handle Any Sales Objection with Confidence",
@@ -1191,17 +1195,44 @@ function LearningLabsPage() {
                 time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/UT_M5gz2TbOGFwnLCk7Xag",
               },
-            ].map((lab, i) => (
+            ]
+              .map((lab) => ({
+                ...lab,
+                labCategory: getLabCategory(lab.title),
+              }))
+              .filter((lab) => selectedCategory === "All" || lab.labCategory === selectedCategory)
+              .map((lab, i) => (
               <div
                 key={i}
                 style={{
-                  background: COLORS.white,
-                  border: `1px solid ${COLORS.lightGray}`,
+                  background: lab.isNext ? COLORS.cream : COLORS.white,
+                  border: `1px solid ${lab.isNext ? COLORS.gold : COLORS.lightGray}`,
                   padding: "24px",
                   marginBottom: 16,
                   borderRadius: 4,
+                  position: "relative",
                 }}
               >
+                {lab.isNext && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 16,
+                      right: 16,
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: 11,
+                      fontWeight: 600,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      color: COLORS.navy,
+                      background: COLORS.gold,
+                      padding: "4px 12px",
+                      borderRadius: 4,
+                    }}
+                  >
+                    Next Session
+                  </div>
+                )}
                 <div
                   style={{
                     display: "flex",
@@ -1213,18 +1244,37 @@ function LearningLabsPage() {
                   }}
                 >
                   <div style={{ flex: 1, minWidth: "250px" }}>
-                    <h3
-                      style={{
-                        fontFamily: "'Playfair Display', Georgia, serif",
-                        fontSize: 18,
-                        color: COLORS.navy,
-                        margin: "0 0 8px 0",
-                        fontWeight: 600,
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {lab.title}
-                    </h3>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
+                      <h3
+                        style={{
+                          fontFamily: "'Playfair Display', Georgia, serif",
+                          fontSize: 18,
+                          color: COLORS.navy,
+                          margin: 0,
+                          fontWeight: 600,
+                          lineHeight: 1.3,
+                        }}
+                      >
+                        {lab.title}
+                      </h3>
+                      {lab.labCategory && (
+                        <span
+                          style={{
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontSize: 11,
+                            fontWeight: 600,
+                            textTransform: "uppercase",
+                            letterSpacing: "0.1em",
+                            color: COLORS.teal,
+                            background: "#E6F7F7",
+                            padding: "4px 10px",
+                            borderRadius: 4,
+                          }}
+                        >
+                          {lab.labCategory}
+                        </span>
+                      )}
+                    </div>
                     <div
                       style={{
                         fontFamily: "'DM Sans', sans-serif",
@@ -1273,53 +1323,6 @@ function LearningLabsPage() {
               </div>
             ))}
           </div>
-
-          <h2
-            style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: 24,
-              color: COLORS.navy,
-              margin: "0 0 32px 0",
-              fontWeight: 600,
-            }}
-          >
-            16 Topics Across Every Function
-          </h2>
-
-          {categories.map((cat, i) => (
-            <div key={i} style={{ marginBottom: 28 }}>
-              <div
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 11,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.15em",
-                  color: COLORS.teal,
-                  fontWeight: 600,
-                  marginBottom: 8,
-                }}
-              >
-                {cat.name}
-              </div>
-              {cat.topics.map((t, j) => (
-                <div
-                  key={j}
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 15,
-                    color: COLORS.charcoal,
-                    lineHeight: 1.7,
-                    paddingLeft: 16,
-                    position: "relative",
-                    marginBottom: 4,
-                  }}
-                >
-                  <span style={{ position: "absolute", left: 0, color: COLORS.gold }}>·</span>
-                  {t}
-                </div>
-              ))}
-            </div>
-          ))}
 
           <div
             style={{
