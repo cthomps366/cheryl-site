@@ -505,58 +505,96 @@ function HomePage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* FEATURED INTERVIEW SECTION */}
+      {/* FEATURED INTERVIEWS SECTION */}
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.white, width: "100%", boxSizing: "border-box" }}>
         <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
-          <SectionLabel text="Featured" />
+          <SectionLabel text="Featured Conversations" />
           <div
             style={{
               display: "flex",
+              flexWrap: "wrap",
               justifyContent: "center",
+              gap: 32,
               marginTop: 24,
-              marginBottom: 16,
             }}
           >
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: 720,
-                paddingBottom: "56.25%", // 16:9 aspect ratio
-                height: 0,
-                overflow: "hidden",
-              }}
-            >
-              <iframe
+            <div style={{ flex: "1 1 320px", maxWidth: 480, minWidth: 280 }}>
+              <div
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
+                  position: "relative",
                   width: "100%",
-                  height: "100%",
-                  border: "none",
+                  paddingBottom: "56.25%",
+                  height: 0,
+                  overflow: "hidden",
+                  borderRadius: 4,
                 }}
-                src="https://www.youtube.com/embed/RG4kf5ZcK1U"
-                title="Featured Interview"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              >
+                <iframe
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
+                  src="https://www.youtube.com/embed/RG4kf5ZcK1U"
+                  title="John McElroy Interview"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: 14,
+                  color: COLORS.mediumGray,
+                  textAlign: "center",
+                  margin: "16px 0 0 0",
+                }}
+              >
+                A conversation with John McElroy on AI, how leaders are using it, and why it matters now.
+              </p>
+            </div>
+            <div style={{ flex: "1 1 320px", maxWidth: 480, minWidth: 280 }}>
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  paddingBottom: "56.25%",
+                  height: 0,
+                  overflow: "hidden",
+                  borderRadius: 4,
+                }}
+              >
+                <iframe
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
+                  src="https://www.youtube.com/embed/YyOUd2Po0dw"
+                  title="Jan Griffiths Automotive Leaders Podcast"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: 14,
+                  color: COLORS.mediumGray,
+                  textAlign: "center",
+                  margin: "16px 0 0 0",
+                }}
+              >
+                A conversation with Jan Griffiths on the Automotive Leaders Podcast
+              </p>
             </div>
           </div>
-          <p
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: 14,
-              color: COLORS.mediumGray,
-              textAlign: "center",
-              margin: 0,
-              maxWidth: 720,
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            A conversation with John McElroy on AI, how leaders are using it, and why it matters now.
-          </p>
         </div>
       </section>
 
@@ -733,57 +771,95 @@ function MyStoryPage() {
 
           <GoldDivider />
 
-          {/* Featured Interview Video */}
+          {/* Featured Conversations */}
           <div style={{ margin: "48px 0" }}>
-            <SectionLabel text="Featured" />
+            <SectionLabel text="Featured Conversations" />
             <div
               style={{
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
+                gap: 32,
                 marginTop: 24,
-                marginBottom: 16,
               }}
             >
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  maxWidth: 720,
-                  paddingBottom: "56.25%", // 16:9 aspect ratio
-                  height: 0,
-                  overflow: "hidden",
-                }}
-              >
-                <iframe
+              <div style={{ flex: "1 1 320px", maxWidth: 480, minWidth: 280 }}>
+                <div
                   style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
+                    position: "relative",
                     width: "100%",
-                    height: "100%",
-                    border: "none",
+                    paddingBottom: "56.25%",
+                    height: 0,
+                    overflow: "hidden",
+                    borderRadius: 4,
                   }}
-                  src="https://www.youtube.com/embed/RG4kf5ZcK1U"
-                  title="Featured Interview"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                >
+                  <iframe
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                    src="https://www.youtube.com/embed/RG4kf5ZcK1U"
+                    title="John McElroy Interview"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: 14,
+                    color: COLORS.mediumGray,
+                    textAlign: "center",
+                    margin: "16px 0 0 0",
+                  }}
+                >
+                  A conversation with John McElroy on AI, how leaders are using it, and why it matters now.
+                </p>
+              </div>
+              <div style={{ flex: "1 1 320px", maxWidth: 480, minWidth: 280 }}>
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    paddingBottom: "56.25%",
+                    height: 0,
+                    overflow: "hidden",
+                    borderRadius: 4,
+                  }}
+                >
+                  <iframe
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                    }}
+                    src="https://www.youtube.com/embed/YyOUd2Po0dw"
+                    title="Jan Griffiths Automotive Leaders Podcast"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: 14,
+                    color: COLORS.mediumGray,
+                    textAlign: "center",
+                    margin: "16px 0 0 0",
+                  }}
+                >
+                  A conversation with Jan Griffiths on the Automotive Leaders Podcast
+                </p>
               </div>
             </div>
-            <p
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 14,
-                color: COLORS.mediumGray,
-                textAlign: "center",
-                margin: 0,
-                maxWidth: 720,
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              A conversation with John McElroy on AI, how leaders are using it, and why it matters now.
-            </p>
           </div>
 
           <GoldDivider />
