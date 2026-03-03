@@ -17,6 +17,26 @@ const COLORS = {
 
 const pages = ["Home", "My Story", "Work With Me", "Learning Labs", "Contact"];
 
+// Hash routing: URL hash <-> page name (e.g. #learning-labs -> Learning Labs)
+const PAGE_TO_HASH = {
+  "Home": "home",
+  "My Story": "my-story",
+  "Work With Me": "work-with-me",
+  "Learning Labs": "learning-labs",
+  "Contact": "contact",
+};
+const HASH_TO_PAGE = Object.fromEntries(
+  Object.entries(PAGE_TO_HASH).map(([page, hash]) => [hash, page])
+);
+function getPageFromHash() {
+  const hash = window.location.hash.slice(1).toLowerCase().replace(/^\//, "");
+  return HASH_TO_PAGE[hash] || "Home";
+}
+function setHashForPage(page) {
+  const hash = PAGE_TO_HASH[page] || "home";
+  window.location.hash = hash === "home" ? "" : hash;
+}
+
 // ============ NAV ============
 function Nav({ current, setCurrent }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -1939,7 +1959,18 @@ function ScrollToTop({ currentPage }) {
 
 // ============ MAIN APP ============
 export default function App() {
-  const [currentPage, setCurrentPage] = useState("Home");
+  const [currentPage, setCurrentPageState] = useState(getPageFromHash);
+
+  const setCurrentPage = (page) => {
+    setCurrentPageState(page);
+    setHashForPage(page);
+  };
+
+  useEffect(() => {
+    const onHashChange = () => setCurrentPageState(getPageFromHash());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
