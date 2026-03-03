@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate, Link } from "react-router-dom";
 import headshot from "./assets/Cheryl-Thompson.png";
 
 const COLORS = {
@@ -17,34 +18,26 @@ const COLORS = {
 
 const pages = ["Home", "My Story", "Work With Me", "Learning Labs", "Contact"];
 
-// Hash routing: URL hash <-> page name (e.g. #learning-labs -> Learning Labs)
-const PAGE_TO_HASH = {
-  "Home": "home",
-  "My Story": "my-story",
-  "Work With Me": "work-with-me",
-  "Learning Labs": "learning-labs",
-  "Contact": "contact",
+// Path-based routing: /learning-labs -> Learning Labs (shareable URLs that survive redirects)
+const PAGE_TO_PATH = {
+  "Home": "/",
+  "My Story": "/my-story",
+  "Work With Me": "/work-with-me",
+  "Learning Labs": "/learning-labs",
+  "Contact": "/contact",
 };
-const HASH_TO_PAGE = Object.fromEntries(
-  Object.entries(PAGE_TO_HASH).map(([page, hash]) => [hash, page])
+const PATH_TO_PAGE = Object.fromEntries(
+  Object.entries(PAGE_TO_PATH).map(([page, path]) => [path, page])
 );
-function getPageFromHash() {
-  const hash = window.location.hash.slice(1).toLowerCase().replace(/^\//, "");
-  return HASH_TO_PAGE[hash] || "Home";
-}
-function setHashForPage(page) {
-  const hash = PAGE_TO_HASH[page] || "home";
-  window.location.hash = hash === "home" ? "" : hash;
+function getPageFromPathname(pathname) {
+  return PATH_TO_PAGE[pathname] || "Home";
 }
 
 // ============ NAV ============
-function Nav({ current, setCurrent }) {
+function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleNavClick = (page) => {
-    setCurrent(page);
-    setIsMenuOpen(false);
-  };
+  const location = useLocation();
+  const current = getPageFromPathname(location.pathname);
 
   return (
     <nav
@@ -94,9 +87,10 @@ function Nav({ current, setCurrent }) {
       {/* Desktop Navigation */}
       <div className="nav-links-desktop" style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "flex-end" }}>
         {pages.map((p) => (
-          <button
+          <Link
             key={p}
-            onClick={() => handleNavClick(p)}
+            to={PAGE_TO_PATH[p]}
+            onClick={() => setIsMenuOpen(false)}
             style={{
               background: "none",
               border: "none",
@@ -109,10 +103,11 @@ function Nav({ current, setCurrent }) {
               borderBottom: current === p ? `2px solid ${COLORS.teal}` : "2px solid transparent",
               paddingBottom: 4,
               transition: "all 0.2s ease",
+              textDecoration: "none",
             }}
           >
             {p}
-          </button>
+          </Link>
         ))}
       </div>
 
@@ -163,13 +158,15 @@ function Nav({ current, setCurrent }) {
       {isMenuOpen && (
         <div className="mobile-menu">
           {pages.map((p) => (
-            <button
+            <Link
               key={p}
+              to={PAGE_TO_PATH[p]}
               className={`mobile-menu-item ${current === p ? "active" : ""}`}
-              onClick={() => handleNavClick(p)}
+              onClick={() => setIsMenuOpen(false)}
+              style={{ textDecoration: "none", color: "inherit" }}
             >
               {p}
-            </button>
+            </Link>
           ))}
         </div>
       )}
@@ -1949,39 +1946,19 @@ function Footer() {
 }
 
 // ============ SCROLL TO TOP ============
-function ScrollToTop({ currentPage }) {
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [currentPage]);
+  }, [pathname]);
 
   return null;
 }
 
 // ============ MAIN APP ============
 export default function App() {
-  const [currentPage, setCurrentPageState] = useState(getPageFromHash);
-
-  const setCurrentPage = (page) => {
-    setCurrentPageState(page);
-    setHashForPage(page);
-  };
-
-  useEffect(() => {
-    const onHashChange = () => setCurrentPageState(getPageFromHash());
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case "Home": return <HomePage setCurrentPage={setCurrentPage} />;
-      case "My Story": return <MyStoryPage />;
-      case "Work With Me": return <WorkWithMePage setCurrentPage={setCurrentPage} />;
-      case "Learning Labs": return <LearningLabsPage />;
-      case "Contact": return <ContactPage />;
-      default: return <HomePage />;
-    }
-  };
+  const navigate = useNavigate();
+  const setCurrentPage = (page) => navigate(PAGE_TO_PATH[page] ?? "/");
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
@@ -1989,9 +1966,17 @@ export default function App() {
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
-      <ScrollToTop currentPage={currentPage} />
-      <Nav current={currentPage} setCurrent={setCurrentPage} />
-      <main style={{ flex: 1, width: "100%", maxWidth: "100%", overflowX: "hidden", paddingTop: "70px" }}>{renderPage()}</main>
+      <ScrollToTop />
+      <Nav />
+      <main style={{ flex: 1, width: "100%", maxWidth: "100%", overflowX: "hidden", paddingTop: "70px" }}>
+        <Routes>
+          <Route path="/" element={<HomePage setCurrentPage={setCurrentPage} />} />
+          <Route path="/my-story" element={<MyStoryPage />} />
+          <Route path="/work-with-me" element={<WorkWithMePage setCurrentPage={setCurrentPage} />} />
+          <Route path="/learning-labs" element={<LearningLabsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );
