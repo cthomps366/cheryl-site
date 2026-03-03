@@ -1146,7 +1146,66 @@ function WorkWithMePage({ setCurrentPage }) {
               </button>
             </div>
           ))}
+
+        <div
+          style={{
+            background: COLORS.cream,
+            padding: "32px 36px",
+            marginTop: 32,
+            border: `1px solid ${COLORS.lightGray}`,
+            borderRadius: 4,
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: 24,
+              color: COLORS.navy,
+              margin: "0 0 12px 0",
+              fontWeight: 600,
+            }}
+          >
+            Making the Ask
+          </h2>
+
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 15,
+              color: COLORS.charcoal,
+              lineHeight: 1.7,
+              margin: "0 0 20px 0",
+              maxWidth: 860,
+            }}
+          >
+            You've seen what's possible. Now here's how to make it happen. This guide walks you through building the case, handling objections, and starting the conversation with your leadership.
+          </p>
+
+          <a
+            href={`${import.meta.env.BASE_URL}How_to_Make_the_Case_for_AI_Investment.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 14,
+              fontWeight: 600,
+              letterSpacing: "0.04em",
+              padding: "12px 24px",
+              border: "none",
+              background: COLORS.teal,
+              color: COLORS.white,
+              cursor: "pointer",
+              transition: "all 0.25s ease",
+              borderRadius: 4,
+              display: "inline-block",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Download the Guide →
+          </a>
         </div>
+      </div>
       </section>
     </div>
   );
