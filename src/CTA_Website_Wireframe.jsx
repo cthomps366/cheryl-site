@@ -74,7 +74,7 @@ function Nav() {
         <span
           style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: 16,
+            fontSize: 20,
             color: COLORS.mediumGray,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
@@ -96,7 +96,7 @@ function Nav() {
               border: "none",
               cursor: "pointer",
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 15,
+              fontSize: 19,
               color: current === p ? COLORS.teal : COLORS.charcoal,
               fontWeight: current === p ? 600 : 400,
               letterSpacing: "0.02em",
@@ -180,7 +180,7 @@ function SectionLabel({ text }) {
     <div
       style={{
         fontFamily: "'DM Sans', sans-serif",
-        fontSize: 14,
+        fontSize: 18,
         textTransform: "uppercase",
         letterSpacing: "0.2em",
         color: COLORS.teal,
@@ -214,7 +214,7 @@ function CTAButton({ text, variant = "primary" }) {
     <button
       style={{
         fontFamily: "'DM Sans', sans-serif",
-        fontSize: 18,
+        fontSize: 22,
         fontWeight: 600,
         letterSpacing: "0.04em",
         padding: "16px 40px",
@@ -252,7 +252,7 @@ function HomePage({ setCurrentPage }) {
           <div
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 13,
+              fontSize: 17,
               textTransform: "uppercase",
               letterSpacing: "0.25em",
               color: COLORS.tealLight,
@@ -301,7 +301,7 @@ function HomePage({ setCurrentPage }) {
               }
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 18,
+                fontSize: 22,
                 fontWeight: 600,
                 letterSpacing: "0.04em",
                 padding: "16px 40px",
@@ -320,7 +320,7 @@ function HomePage({ setCurrentPage }) {
               onClick={() => setCurrentPage("Learning Labs")}
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 18,
+                fontSize: 22,
                 fontWeight: 500,
                 padding: "16px 40px",
                 border: `1.5px solid ${COLORS.tealLight}`,
@@ -417,7 +417,7 @@ function HomePage({ setCurrentPage }) {
                 <div
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 13,
+                    fontSize: 17,
                     textTransform: "uppercase",
                     letterSpacing: "0.15em",
                     color: COLORS.teal,
@@ -441,7 +441,7 @@ function HomePage({ setCurrentPage }) {
                 <p
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 17,
+                    fontSize: 21,
                     color: COLORS.charcoal,
                     lineHeight: 1.7,
                     margin: "0 0 20px 0",
@@ -454,7 +454,7 @@ function HomePage({ setCurrentPage }) {
                 onClick={offer.onCta}
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 15,
+                  fontSize: 19,
                   fontWeight: 600,
                   color: COLORS.teal,
                   background: "none",
@@ -514,7 +514,7 @@ function HomePage({ setCurrentPage }) {
               <div
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 15,
+                  fontSize: 19,
                   color: COLORS.mediumGray,
                   letterSpacing: "0.01em",
                 }}
@@ -568,7 +568,7 @@ function HomePage({ setCurrentPage }) {
               <p
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 16,
+                  fontSize: 20,
                   color: COLORS.mediumGray,
                   textAlign: "center",
                   margin: "16px 0 0 0",
@@ -606,7 +606,7 @@ function HomePage({ setCurrentPage }) {
               <p
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 16,
+                  fontSize: 20,
                   color: COLORS.mediumGray,
                   textAlign: "center",
                   margin: "16px 0 0 0",
@@ -726,46 +726,46 @@ function MyStoryPage() {
           >
             Where It Started
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             I didn't take the traditional path into engineering. I started waitressing as a teenager, landed a tool and die apprenticeship, and built a 33-year career at Ford and Dauch from there.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             That apprenticeship changed everything. I graduated, worked as a journey person for a couple of years, and then a superintendent — someone who saw something in me before I fully saw it in myself — sponsored me into engineering. Not mentored. Sponsored. He put his name next to mine and opened a door I couldn't have opened alone.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0", fontStyle: "italic" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0", fontStyle: "italic" }}>
             That's the difference between someone who gives you advice and someone who changes your trajectory. I've never forgotten it.
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
             What I Built Over 31 Years
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             I spent 31 years at Ford Motor Company. I came up through the trades, moved into engineering, and worked my way through gear engineering, tooling and gauging, and multiple management roles. I retired as the Prototype Operations Manager for Powertrain — responsible for transmission, engine, axle, and additive manufacturing.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
             After Ford, I served as the Global Director of Prototype Operations at American Axle and Manufacturing. Between those two roles, I spent over three decades inside complex manufacturing organizations, learning how they really work — not the org chart version, but the human version.
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
             The Eight Years in Between
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             After leaving automotive, I founded and ran an organization that served the automotive industry for eight years. I built programs, ran cohorts, designed curriculum, and worked with senior leaders on culture, leadership, and organizational performance.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
             That experience gave me something I didn't expect: a deep understanding of how organizations adopt new ways of working and, more importantly, why they resist.
           </p>
 
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
             The Shift to AI
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             In April 2025, I enrolled in an AI boot camp. I completed the full program. Then I went through it again. I joined a weekly mastermind where I continue to learn new skills every single week. And I started building.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             I have now logged thousands of hours of hands-on AI work. Not watching tutorials. Building. Custom GPTs, Copilot agents, prompt architectures, workflows, learning libraries, onboarding systems, matching tools, and full applications.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
             I'm not a technologist. I have no technical background. I'm turning 60 this year. And that's exactly why I'm the right person to teach this. If I can build this level of capability through discipline and structured learning, so can you.
           </p>
 
@@ -833,7 +833,7 @@ function MyStoryPage() {
                 <p
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 16,
+                    fontSize: 20,
                     color: COLORS.mediumGray,
                     textAlign: "center",
                     margin: "16px 0 0 0",
@@ -871,7 +871,7 @@ function MyStoryPage() {
                 <p
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 16,
+                    fontSize: 20,
                     color: COLORS.mediumGray,
                     textAlign: "center",
                     margin: "16px 0 0 0",
@@ -893,7 +893,7 @@ function MyStoryPage() {
             }
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: 600,
               letterSpacing: "0.04em",
               padding: "16px 40px",
@@ -921,7 +921,7 @@ function OfferingLabel({ children }) {
     <div
       style={{
         fontFamily: "'DM Sans', sans-serif",
-        fontSize: 13,
+        fontSize: 17,
         textTransform: "uppercase",
         letterSpacing: "0.15em",
         color: COLORS.teal,
@@ -963,7 +963,7 @@ function WorkWithMePage({ setCurrentPage }) {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 19,
+              fontSize: 23,
               color: COLORS.charcoal,
               lineHeight: 1.7,
               margin: "0 0 48px 0",
@@ -979,21 +979,21 @@ function WorkWithMePage({ setCurrentPage }) {
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Learning Labs
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               60 minutes. A real challenge. Something you can use the same day.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Every week, I host a live session where you work on an actual workplace problem using AI. Not theory. Not slides. You bring the challenge, we work it together, and you leave with a prompt, a workflow, or a system you can put to work immediately.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               16 topics spanning career development, operations, leadership, finance, communications, and more. Platform-agnostic — works in ChatGPT, Copilot, Claude, Gemini. Tuesdays at 12:00 PM ET.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Anyone doing knowledge work who wants to build real AI skills.
             </div>
             <button
               onClick={() => setCurrentPage("Learning Labs")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 19, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               See the Schedule →
             </button>
@@ -1005,24 +1005,24 @@ function WorkWithMePage({ setCurrentPage }) {
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               AI Opportunity Scan
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               A focused session where I look inside your actual workflows and identify the real opportunities to save time and money with AI.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Most organizations know AI matters. What they don't have is someone who can walk into their operation, understand how the work actually gets done, and point to the specific places where AI creates measurable impact. That's what this is.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               I spend a half-day with your team — virtually or on-site — reviewing workflows, asking the questions vendors don't ask, and mapping the opportunities hiding in your day-to-day work. You get a clear, prioritized summary of where AI can reduce time, cost, and friction — and what it would take to get there.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               No software pitch. No generic recommendations. Just an experienced set of eyes on your operation.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Leaders and teams who know AI is relevant to their work but want someone with operational experience to show them exactly where — and why.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 19, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1034,24 +1034,24 @@ function WorkWithMePage({ setCurrentPage }) {
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Leader Advisory
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               A strategic thinking partnership for leaders applying AI to their real work.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Four sessions over eight weeks, built around your actual challenges — not hypothetical exercises. We work on your projects, build workflows tailored to your role, and develop the kind of capability you keep long after we're done.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               For some leaders, that means building AI into daily decision-making. For others, it means working through a high-stakes strategic challenge with a thinking partner who understands both the technology and the operational reality behind it.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               Every engagement is platform-agnostic and grounded in how your work actually gets done.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Executives, directors, managers, business owners, and professionals navigating AI in their work.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 19, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1063,13 +1063,13 @@ function WorkWithMePage({ setCurrentPage }) {
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Organizational AI Adoption
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               AI adoption doesn't fail because of bad technology. It fails because organizations introduce tools without understanding how work actually happens inside them — and without giving people the safety to experiment.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               This engagement meets your organization where it actually is. It can start with a focused readiness assessment to understand what's working, what's stuck, and what needs to change. It can move into adoption strategy — identifying the right workflows, building leadership alignment, and designing the conditions where AI use becomes sustainable. And when teams are ready, it becomes hands-on: building real AI-powered tools tied directly to their work.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.navy, fontWeight: 600, marginBottom: 12, marginTop: 20 }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, color: COLORS.navy, fontWeight: 600, marginBottom: 12, marginTop: 20 }}>
               What this can include:
             </div>
             <div style={{ marginBottom: 16 }}>
@@ -1079,21 +1079,21 @@ function WorkWithMePage({ setCurrentPage }) {
                 "Team AI Accelerator — your team builds AI tools for their own work and leaves owning everything they create",
                 "A complete playbook documenting what was built, how it works, and how to sustain it",
               ].map((item, j) => (
-                <div key={j} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, paddingLeft: 16, position: "relative", marginBottom: 6 }}>
+                <div key={j} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 19, color: COLORS.charcoal, lineHeight: 1.7, paddingLeft: 16, position: "relative", marginBottom: 6 }}>
                   <span style={{ position: "absolute", left: 0, color: COLORS.teal, fontWeight: 700 }}>·</span>
                   {item}
                 </div>
               ))}
             </div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               Every phase is designed so your organization builds capability — not dependency. You keep everything.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Senior leaders, functional leaders, and organizations ready to move from AI curiosity to sustainable adoption across Operations, HR, Sales, Engineering, Communications, Finance, and more.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 19, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1105,18 +1105,18 @@ function WorkWithMePage({ setCurrentPage }) {
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Leadership Advisory & Workshops
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Over 40 years of experience leading inside complex organizations — available for leadership development, executive coaching, team workshops, and keynote speaking.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 21, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               This work draws on decades of leading teams through change, navigating organizational complexity, and building the kind of cultures where people do their best work. Available as standalone engagements or combined with AI advisory work.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Organizations and leaders who need experienced, grounded leadership support.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 19, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1146,7 +1146,7 @@ function WorkWithMePage({ setCurrentPage }) {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 17,
+              fontSize: 21,
               color: COLORS.charcoal,
               lineHeight: 1.7,
               margin: "0 0 20px 0",
@@ -1162,7 +1162,7 @@ function WorkWithMePage({ setCurrentPage }) {
             rel="noopener noreferrer"
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: 600,
               letterSpacing: "0.04em",
               padding: "12px 24px",
@@ -1274,7 +1274,7 @@ function LearningLabsPage() {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 19,
+              fontSize: 23,
               color: COLORS.charcoal,
               lineHeight: 1.7,
               margin: "0 0 12px 0",
@@ -1285,7 +1285,7 @@ function LearningLabsPage() {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 17,
+              fontSize: 21,
               color: COLORS.mediumGray,
               lineHeight: 1.7,
               margin: "0 0 48px 0",
@@ -1301,7 +1301,7 @@ function LearningLabsPage() {
               rel="noopener noreferrer"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 18,
+                fontSize: 22,
                 color: COLORS.teal,
                 textDecoration: "none",
                 fontWeight: 500,
@@ -1341,7 +1341,7 @@ function LearningLabsPage() {
                 onClick={() => setSelectedCategory(cat)}
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 15,
+                  fontSize: 19,
                   fontWeight: selectedCategory === cat ? 600 : 400,
                   padding: "8px 16px",
                   border: `1.5px solid ${selectedCategory === cat ? COLORS.teal : COLORS.lightGray}`,
@@ -1571,7 +1571,7 @@ function LearningLabsPage() {
                       <div
                         style={{
                           fontFamily: "'DM Sans', sans-serif",
-                          fontSize: 13,
+                          fontSize: 17,
                           textTransform: "uppercase",
                           letterSpacing: "0.15em",
                           color: COLORS.mediumGray,
@@ -1603,7 +1603,7 @@ function LearningLabsPage() {
                       top: 16,
                       right: 16,
                       fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 13,
+                      fontSize: 17,
                       fontWeight: 600,
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
@@ -1644,7 +1644,7 @@ function LearningLabsPage() {
                         <span
                           style={{
                             fontFamily: "'DM Sans', sans-serif",
-                            fontSize: 13,
+                            fontSize: 17,
                             fontWeight: 600,
                             textTransform: "uppercase",
                             letterSpacing: "0.1em",
@@ -1661,7 +1661,7 @@ function LearningLabsPage() {
                     <div
                       style={{
                         fontFamily: "'DM Sans', sans-serif",
-                        fontSize: 16,
+                        fontSize: 20,
                         color: COLORS.mediumGray,
                         marginBottom: lab.category ? 8 : 0,
                         display: "flex",
@@ -1675,7 +1675,7 @@ function LearningLabsPage() {
                         <span
                           style={{
                             fontFamily: "'DM Sans', sans-serif",
-                            fontSize: 13,
+                            fontSize: 17,
                             fontWeight: 600,
                             textTransform: "uppercase",
                             letterSpacing: "0.1em",
@@ -1693,7 +1693,7 @@ function LearningLabsPage() {
                       <div
                         style={{
                           fontFamily: "'DM Sans', sans-serif",
-                          fontSize: 15,
+                          fontSize: 19,
                           color: COLORS.charcoal,
                           fontStyle: "italic",
                           marginTop: 8,
@@ -1711,7 +1711,7 @@ function LearningLabsPage() {
                       rel="noopener noreferrer"
                       style={{
                         fontFamily: "'DM Sans', sans-serif",
-                        fontSize: 16,
+                        fontSize: 20,
                         color: COLORS.teal,
                         textDecoration: "none",
                         fontWeight: 500,
@@ -1728,7 +1728,7 @@ function LearningLabsPage() {
                       onClick={() => window.open(lab.link, "_blank")}
                       style={{
                         fontFamily: "'DM Sans', sans-serif",
-                        fontSize: 16,
+                        fontSize: 20,
                         fontWeight: 600,
                         letterSpacing: "0.04em",
                         padding: "12px 24px",
@@ -1761,7 +1761,7 @@ function LearningLabsPage() {
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 17,
+                fontSize: 21,
                 color: COLORS.charcoal,
                 lineHeight: 1.7,
                 margin: 0,
@@ -1795,7 +1795,7 @@ function LearningLabsPage() {
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 17,
+                fontSize: 21,
                 color: COLORS.charcoal,
                 lineHeight: 1.7,
                 margin: "0 0 20px 0",
@@ -1811,7 +1811,7 @@ function LearningLabsPage() {
               rel="noopener noreferrer"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 16,
+                fontSize: 20,
                 fontWeight: 600,
                 letterSpacing: "0.04em",
                 padding: "12px 24px",
@@ -1865,7 +1865,7 @@ function ContactPage() {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 19,
+              fontSize: 23,
               color: COLORS.charcoal,
               lineHeight: 1.8,
               margin: "0 0 16px 0",
@@ -1885,7 +1885,7 @@ function ContactPage() {
               }
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: 18,
+                fontSize: 22,
                 fontWeight: 600,
                 letterSpacing: "0.04em",
                 padding: "16px 40px",
@@ -1904,7 +1904,7 @@ function ContactPage() {
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 18,
+              fontSize: 22,
               color: "#2C5282",
               lineHeight: 1.7,
               textAlign: "center",
@@ -1956,7 +1956,7 @@ function Footer() {
         <span
           style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: 16,
+            fontSize: 20,
             color: COLORS.mediumGray,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
@@ -1969,7 +1969,7 @@ function Footer() {
       <div
         style={{
           fontFamily: "'DM Sans', sans-serif",
-          fontSize: 18,
+          fontSize: 22,
           color: COLORS.mediumGray,
         }}
       >
