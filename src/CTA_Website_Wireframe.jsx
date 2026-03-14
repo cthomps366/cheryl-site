@@ -337,7 +337,7 @@ function HomePage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* WHAT I DO - 4 OFFERINGS */}
+      {/* WHAT I DO - 5 OFFERINGS */}
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
         <SectionLabel text="How I Work With People" />
         <h2
@@ -349,7 +349,7 @@ function HomePage({ setCurrentPage }) {
             fontWeight: 600,
           }}
         >
-          Four ways in. One goal: capability that stays.
+          Five ways in. One goal: capability that stays.
         </h2>
         <div
           className="four-tiers-grid"
@@ -368,6 +368,13 @@ function HomePage({ setCurrentPage }) {
               desc: "60-minute live sessions where you solve a real workplace challenge using AI. Walk away with something you can use the same day.",
               cta: "See the Schedule →",
               onCta: () => setCurrentPage("Learning Labs"),
+            },
+            {
+              label: "HALF-DAY · VIRTUAL OR ON-SITE",
+              title: "AI Opportunity Scan",
+              desc: "A focused session where I look inside your actual workflows and identify the real opportunities to save time and money with AI.",
+              cta: "Learn More →",
+              onCta: () => navigate("/work-with-me#ai-opportunity-scan"),
             },
             {
               label: "1:1 · 8 WEEKS",
@@ -951,7 +958,7 @@ function WorkWithMePage({ setCurrentPage }) {
               lineHeight: 1.25,
             }}
           >
-            Four ways in. One goal.
+            Five ways in. One goal.
           </h1>
           <p
             style={{
@@ -992,7 +999,36 @@ function WorkWithMePage({ setCurrentPage }) {
             </button>
           </div>
 
-          {/* OFFERING 2: Leader Advisory */}
+          {/* OFFERING 2: AI Opportunity Scan */}
+          <div id="ai-opportunity-scan" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+            <OfferingLabel>HALF-DAY · VIRTUAL OR ON-SITE</OfferingLabel>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+              AI Opportunity Scan
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              A focused session where I look inside your actual workflows and identify the real opportunities to save time and money with AI.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              Most organizations know AI matters. What they don't have is someone who can walk into their operation, understand how the work actually gets done, and point to the specific places where AI creates measurable impact. That's what this is.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              I spend a half-day with your team — virtually or on-site — reviewing workflows, asking the questions vendors don't ask, and mapping the opportunities hiding in your day-to-day work. You get a clear, prioritized summary of where AI can reduce time, cost, and friction — and what it would take to get there.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+              No software pitch. No generic recommendations. Just an experienced set of eyes on your operation.
+            </p>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+              For: Leaders and teams who know AI is relevant to their work but want someone with operational experience to show them exactly where — and why.
+            </div>
+            <button
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+            >
+              Book a Conversation →
+            </button>
+          </div>
+
+          {/* OFFERING 3: Leader Advisory */}
           <div id="leader-advisory" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>1:1 · VIRTUAL · 8 WEEKS</OfferingLabel>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
@@ -1021,7 +1057,7 @@ function WorkWithMePage({ setCurrentPage }) {
             </button>
           </div>
 
-          {/* OFFERING 3: Organizational AI Adoption */}
+          {/* OFFERING 4: Organizational AI Adoption */}
           <div id="organizational-ai-adoption" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>TEAMS & ORGANIZATIONS · CUSTOM SCOPE</OfferingLabel>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
@@ -1063,7 +1099,7 @@ function WorkWithMePage({ setCurrentPage }) {
             </button>
           </div>
 
-          {/* OFFERING 4: Leadership Advisory & Workshops */}
+          {/* OFFERING 5: Leadership Advisory & Workshops */}
           <div id="leadership-advisory" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>CUSTOM</OfferingLabel>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
