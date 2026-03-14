@@ -910,80 +910,27 @@ function MyStoryPage() {
 }
 
 // ============ WORK WITH ME PAGE ============
-function WorkWithMePage({ setCurrentPage }) {
-  const tiers = [
-    {
-      name: "Learning Labs",
-      price: "Free",
-      format: "60 minutes, weekly, virtual",
-      summary: "Work on a real challenge and leave with something you can use the same day.",
-      details: [
-        "16 topics spanning career development, operations, leadership, finance, communications, and more",
-        "Platform-agnostic: works in ChatGPT, Copilot, Claude, Gemini",
-        "Every session includes a hands-on prompt or tool you take with you",
-        "Tuesdays at 12:00 PM ET",
-      ],
-      who: "Open to anyone doing knowledge work who wants to build AI skills",
-      cta: "See the Schedule",
-    },
-    {
-      name: "One-on-One AI Advisory",
-      price: "$5,000 – $7,500",
-      format: "4 sessions over 8 weeks, virtual",
-      summary: "We work on your actual projects, build prompts and workflows tailored to your role, and develop capability you keep.",
-      details: [
-        "60-minute sessions, every other week",
-        "Built around your real challenges, not hypothetical exercises",
-        "You walk away with prompts, workflows, and systems designed for your specific work",
-        "Platform-agnostic across all major AI tools",
-      ],
-      who: "Directors, managers, individual contributors, business owners, and professionals in career transition",
-      cta: "Book a Conversation",
-    },
-    {
-      name: "Your Edge — Executive Sprint",
-      price: "$12,500",
-      format: "4 sessions over 8 weeks, virtual",
-      summary: "A strategic thinking partner for senior leaders who carry challenges they can't hand off to anyone else.",
-      details: [
-        "Focused on clarity, leverage, and practical application",
-        "We build AI-supported systems for your highest-stakes work",
-        "Discretion is how I work, not a policy",
-        "Option to continue on a lighter advisory basis after the sprint",
-      ],
-      who: "Senior leaders and executives with full calendars, high-stakes decisions, and limited patience for fluff",
-      cta: "Book a Conversation",
-    },
-    {
-      name: "Team AI Accelerator",
-      price: "$25,000 – $50,000",
-      format: "6–8 weeks embedded with your team",
-      summary: "Your team learns to build AI-powered tools for their own work — and leaves owning everything they create.",
-      details: [
-        "Weekly sessions with the full team on their real challenges",
-        "Build prompts, workflows, and a custom AI assistant tailored to the team's function",
-        "Complete playbook documenting everything the team built",
-        "Designed for sustainable capability, not dependency",
-      ],
-      who: "Functional leaders who want their team equipped across Operations, HR, Sales, Engineering, Communications, Finance, and more",
-      cta: "Book a Conversation",
-    },
-    {
-      name: "Leadership Advisory & Workshops",
-      price: "Custom",
-      format: "Keynotes, workshops, coaching, and advisory engagements",
-      summary: "Over 40 years of experience leading inside complex organizations — available for leadership development, executive coaching, team workshops, and keynote speaking that isn't AI-specific.",
-      details: [
-        "Leadership development workshops tailored to your organization's challenges",
-        "Executive coaching grounded in real operational experience, not theory",
-        "Keynote speaking on leadership, navigating complexity, and building resilient teams",
-        "Available as standalone engagements or combined with AI advisory work",
-      ],
-      who: "Organizations and leaders who need experienced, grounded leadership support",
-      cta: "Book a Conversation",
-    },
-  ];
+const CALENDLY_URL = "https://calendly.com/cadia-cheryl/15min?month=2026-02";
 
+function OfferingLabel({ children }) {
+  return (
+    <div
+      style={{
+        fontFamily: "'DM Sans', sans-serif",
+        fontSize: 11,
+        textTransform: "uppercase",
+        letterSpacing: "0.15em",
+        color: COLORS.teal,
+        marginBottom: 12,
+        fontWeight: 600,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function WorkWithMePage({ setCurrentPage }) {
   return (
     <div>
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
@@ -999,7 +946,7 @@ function WorkWithMePage({ setCurrentPage }) {
               lineHeight: 1.25,
             }}
           >
-            Five ways in. One goal.
+            Four ways in. One goal.
           </h1>
           <p
             style={{
@@ -1007,145 +954,132 @@ function WorkWithMePage({ setCurrentPage }) {
               fontSize: 17,
               color: COLORS.charcoal,
               lineHeight: 1.7,
-              margin: "0 0 56px 0",
+              margin: "0 0 48px 0",
               maxWidth: 560,
             }}
           >
             Everything I build with clients is designed to transfer. The goal is never dependency. It's capability that stays with you.
           </p>
 
-          {tiers.map((tier, i) => (
-            <div
-              key={i}
-              style={{
-                background: COLORS.white,
-                border: `1px solid ${COLORS.lightGray}`,
-                padding: "40px 40px 36px",
-                marginBottom: 24,
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  marginBottom: 8,
-                  flexWrap: "wrap",
-                  gap: 12,
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: 24,
-                    color: COLORS.navy,
-                    margin: 0,
-                    fontWeight: 600,
-                  }}
-                >
-                  {tier.name}
-                </h3>
-                <span
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: tier.price === "Free" ? COLORS.teal : COLORS.navy,
-                  }}
-                >
-                  {tier.price}
-                </span>
-              </div>
-              <div
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 14,
-                  color: COLORS.mediumGray,
-                  marginBottom: 16,
-                  letterSpacing: "0.02em",
-                }}
-              >
-                {tier.format}
-              </div>
-              <p
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 15,
-                  color: COLORS.charcoal,
-                  lineHeight: 1.7,
-                  margin: "0 0 20px 0",
-                }}
-              >
-                {tier.summary}
-              </p>
-              <div style={{ marginBottom: 20 }}>
-                {tier.details.map((d, j) => (
-                  <div
-                    key={j}
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 13,
-                      color: COLORS.charcoal,
-                      lineHeight: 1.7,
-                      paddingLeft: 16,
-                      position: "relative",
-                      marginBottom: 6,
-                    }}
-                  >
-                    <span
-                      style={{
-                        position: "absolute",
-                        left: 0,
-                        color: COLORS.teal,
-                        fontWeight: 700,
-                      }}
-                    >
-                      ·
-                    </span>
-                    {d}
-                  </div>
-                ))}
-              </div>
-              <div
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 14,
-                  color: COLORS.mediumGray,
-                  fontStyle: "italic",
-                  marginBottom: 20,
-                }}
-              >
-                For: {tier.who}
-              </div>
-              <button
-                onClick={
-                  tier.cta === "Book a Conversation"
-                    ? () =>
-                        window.open(
-                          "https://calendly.com/cadia-cheryl/15min?month=2026-02",
-                          "_blank"
-                        )
-                    : tier.cta === "See the Schedule"
-                    ? () => setCurrentPage("Learning Labs")
-                    : undefined
-                }
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: COLORS.teal,
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: 0,
-                  letterSpacing: "0.02em",
-                  borderBottom: `1px solid ${COLORS.teal}`,
-                }}
-              >
-                {tier.cta} →
-              </button>
+          {/* OFFERING 1: Learning Labs */}
+          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+            <OfferingLabel>FREE · WEEKLY · VIRTUAL</OfferingLabel>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+              Learning Labs
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              60 minutes. A real challenge. Something you can use the same day.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              Every week, I host a live session where you work on an actual workplace problem using AI. Not theory. Not slides. You bring the challenge, we work it together, and you leave with a prompt, a workflow, or a system you can put to work immediately.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+              16 topics spanning career development, operations, leadership, finance, communications, and more. Platform-agnostic — works in ChatGPT, Copilot, Claude, Gemini. Tuesdays at 12:00 PM ET.
+            </p>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+              For: Anyone doing knowledge work who wants to build real AI skills.
             </div>
-          ))}
+            <button
+              onClick={() => setCurrentPage("Learning Labs")}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+            >
+              See the Schedule →
+            </button>
+          </div>
+
+          {/* OFFERING 2: Leader Advisory */}
+          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+            <OfferingLabel>1:1 · VIRTUAL · 8 WEEKS</OfferingLabel>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+              Leader Advisory
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              A strategic thinking partnership for leaders applying AI to their real work.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              Four sessions over eight weeks, built around your actual challenges — not hypothetical exercises. We work on your projects, build workflows tailored to your role, and develop the kind of capability you keep long after we're done.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              For some leaders, that means building AI into daily decision-making. For others, it means working through a high-stakes strategic challenge with a thinking partner who understands both the technology and the operational reality behind it.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+              Every engagement is platform-agnostic and grounded in how your work actually gets done.
+            </p>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+              For: Executives, directors, managers, business owners, and professionals navigating AI in their work.
+            </div>
+            <button
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+            >
+              Book a Conversation →
+            </button>
+          </div>
+
+          {/* OFFERING 3: Organizational AI Adoption */}
+          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+            <OfferingLabel>TEAMS & ORGANIZATIONS · CUSTOM SCOPE</OfferingLabel>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+              Organizational AI Adoption
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              AI adoption doesn't fail because of bad technology. It fails because organizations introduce tools without understanding how work actually happens inside them — and without giving people the safety to experiment.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              This engagement meets your organization where it actually is. It can start with a focused readiness assessment to understand what's working, what's stuck, and what needs to change. It can move into adoption strategy — identifying the right workflows, building leadership alignment, and designing the conditions where AI use becomes sustainable. And when teams are ready, it becomes hands-on: building real AI-powered tools tied directly to their work.
+            </p>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: COLORS.navy, fontWeight: 600, marginBottom: 12, marginTop: 20 }}>
+              What this can include:
+            </div>
+            <div style={{ marginBottom: 16 }}>
+              {[
+                "AI Readiness Assessment — a clear picture of where your organization stands and what's getting in the way",
+                "Adoption strategy development — leadership alignment, workflow mapping, and a practical path forward",
+                "Team AI Accelerator — your team builds AI tools for their own work and leaves owning everything they create",
+                "A complete playbook documenting what was built, how it works, and how to sustain it",
+              ].map((item, j) => (
+                <div key={j} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: COLORS.charcoal, lineHeight: 1.7, paddingLeft: 16, position: "relative", marginBottom: 6 }}>
+                  <span style={{ position: "absolute", left: 0, color: COLORS.teal, fontWeight: 700 }}>·</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+              Every phase is designed so your organization builds capability — not dependency. You keep everything.
+            </p>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+              For: Senior leaders, functional leaders, and organizations ready to move from AI curiosity to sustainable adoption across Operations, HR, Sales, Engineering, Communications, Finance, and more.
+            </div>
+            <button
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+            >
+              Book a Conversation →
+            </button>
+          </div>
+
+          {/* OFFERING 4: Leadership Advisory & Workshops */}
+          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+            <OfferingLabel>CUSTOM</OfferingLabel>
+            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+              Leadership Advisory & Workshops
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              Over 40 years of experience leading inside complex organizations — available for leadership development, executive coaching, team workshops, and keynote speaking.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+              This work draws on decades of leading teams through change, navigating organizational complexity, and building the kind of cultures where people do their best work. Available as standalone engagements or combined with AI advisory work.
+            </p>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+              For: Organizations and leaders who need experienced, grounded leadership support.
+            </div>
+            <button
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+            >
+              Book a Conversation →
+            </button>
+          </div>
 
         <div
           style={{
