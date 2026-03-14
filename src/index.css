@@ -39,7 +39,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.325em;
   line-height: 1.1;
 }
 
@@ -47,7 +47,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.125em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -76,7 +76,7 @@ button:focus-visible {
 }
 /* --- Global scale-up for readability --- */
 body {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 #root {
@@ -150,7 +150,7 @@ body {
     border: none;
     border-bottom: 1px solid #E2E8F0;
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     color: #2D3748;
     cursor: pointer;
     transition: background 0.2s ease;
