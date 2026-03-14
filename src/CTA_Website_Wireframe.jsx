@@ -232,6 +232,7 @@ function CTAButton({ text, variant = "primary" }) {
 
 // ============ HOME PAGE ============
 function HomePage({ setCurrentPage }) {
+  const navigate = useNavigate();
   return (
     <div>
       {/* HERO */}
@@ -336,7 +337,7 @@ function HomePage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* WHAT I DO - 5 TIERS */}
+      {/* WHAT I DO - 4 OFFERINGS */}
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
         <SectionLabel text="How I Work With People" />
         <h2
@@ -348,7 +349,7 @@ function HomePage({ setCurrentPage }) {
             fontWeight: 600,
           }}
         >
-          Five ways in. One goal: capability that stays.
+          Four ways in. One goal: capability that stays.
         </h2>
         <div
           className="four-tiers-grid"
@@ -362,34 +363,32 @@ function HomePage({ setCurrentPage }) {
         >
           {[
             {
+              label: "FREE · WEEKLY",
               title: "Learning Labs",
-              tag: "Free",
-              desc: "60-minute weekly sessions where you work on a real challenge and leave with something you can use the same day. No pitch, no theory. Just practical AI skill-building.",
-              audience: "Open to all",
+              desc: "60-minute live sessions where you solve a real workplace challenge using AI. Walk away with something you can use the same day.",
+              cta: "See the Schedule →",
+              onCta: () => setCurrentPage("Learning Labs"),
             },
             {
-              title: "One-on-One AI Advisory",
-              tag: "Starting at $5,000",
-              desc: "We work on your actual projects, build prompts and workflows tailored to your role, and develop AI capability you can build on long after we stop meeting.",
-              audience: "Directors, managers, individual contributors",
+              label: "1:1 · 8 WEEKS",
+              title: "Leader Advisory",
+              desc: "A strategic thinking partnership for leaders applying AI to their real work. Four sessions. Your challenges. Capability you keep.",
+              cta: "Learn More →",
+              onCta: () => navigate("/work-with-me#leader-advisory"),
             },
             {
-              title: "Your Edge — Executive Sprint",
-              tag: "Starting at $12,500",
-              desc: "A focused advisory engagement for senior leaders who need a strategic thinking partner. We tackle the challenges you can't hand off to anyone else, using AI to think with more clarity and speed.",
-              audience: "Senior leaders and executives",
+              label: "TEAMS & ORGANIZATIONS",
+              title: "Organizational AI Adoption",
+              desc: "From readiness assessment to adoption strategy to hands-on team implementation. Your organization builds capability — not dependency.",
+              cta: "Learn More →",
+              onCta: () => navigate("/work-with-me#organizational-ai-adoption"),
             },
             {
-              title: "Team AI Accelerator",
-              tag: "Starting at $25,000",
-              desc: "Your team learns to build AI-powered tools for their own work. Six to eight weeks embedded with your team, building prompts, workflows, and a custom AI assistant they own.",
-              audience: "Functional leaders and their teams",
-            },
-            {
+              label: "CUSTOM",
               title: "Leadership Advisory & Workshops",
-              tag: "Custom",
-              desc: "Over 40 years leading inside complex organizations. Available for leadership development, executive coaching, team workshops, and keynote speaking.",
-              audience: "Organizations and leaders seeking experienced, grounded leadership support",
+              desc: "Leadership development, executive coaching, team workshops, and keynote speaking. Available standalone or combined with AI advisory.",
+              cta: "Learn More →",
+              onCta: () => navigate("/work-with-me#leadership-advisory"),
             },
           ].map((offer, i) => (
             <div
@@ -410,60 +409,58 @@ function HomePage({ setCurrentPage }) {
               <div>
                 <div
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    marginBottom: 16,
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: 11,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.15em",
+                    color: COLORS.teal,
+                    marginBottom: 12,
+                    fontWeight: 600,
                   }}
                 >
-                  <h3
-                    style={{
-                      fontFamily: "'Playfair Display', Georgia, serif",
-                      fontSize: 20,
-                      color: COLORS.navy,
-                      margin: 0,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {offer.title}
-                  </h3>
-                  <span
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: 14,
-                      fontWeight: 600,
-                      color: offer.tag === "Free" ? COLORS.teal : COLORS.charcoal,
-                      background: offer.tag === "Free" ? "#E6F7F7" : COLORS.cream,
-                      padding: "4px 12px",
-                      letterSpacing: "0.02em",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {offer.tag}
-                  </span>
+                  {offer.label}
                 </div>
+                <h3
+                  style={{
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 20,
+                    color: COLORS.navy,
+                    margin: "0 0 16px 0",
+                    fontWeight: 600,
+                  }}
+                >
+                  {offer.title}
+                </h3>
                 <p
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 18,
+                    fontSize: 15,
                     color: COLORS.charcoal,
                     lineHeight: 1.7,
-                    margin: "0 0 16px 0",
+                    margin: "0 0 20px 0",
                   }}
                 >
                   {offer.desc}
                 </p>
               </div>
-              <div
+              <button
+                onClick={offer.onCta}
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: 16,
-                  color: COLORS.mediumGray,
-                  fontStyle: "italic",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: COLORS.teal,
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                  letterSpacing: "0.02em",
+                  borderBottom: `1px solid ${COLORS.teal}`,
+                  alignSelf: "flex-start",
                 }}
               >
-                {offer.audience}
-              </div>
+                {offer.cta}
+              </button>
             </div>
           ))}
         </div>
@@ -931,6 +928,14 @@ function OfferingLabel({ children }) {
 }
 
 function WorkWithMePage({ setCurrentPage }) {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [hash]);
   return (
     <div>
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
@@ -988,7 +993,7 @@ function WorkWithMePage({ setCurrentPage }) {
           </div>
 
           {/* OFFERING 2: Leader Advisory */}
-          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+          <div id="leader-advisory" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>1:1 · VIRTUAL · 8 WEEKS</OfferingLabel>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Leader Advisory
@@ -1017,7 +1022,7 @@ function WorkWithMePage({ setCurrentPage }) {
           </div>
 
           {/* OFFERING 3: Organizational AI Adoption */}
-          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+          <div id="organizational-ai-adoption" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>TEAMS & ORGANIZATIONS · CUSTOM SCOPE</OfferingLabel>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Organizational AI Adoption
@@ -1059,7 +1064,7 @@ function WorkWithMePage({ setCurrentPage }) {
           </div>
 
           {/* OFFERING 4: Leadership Advisory & Workshops */}
-          <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+          <div id="leadership-advisory" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>CUSTOM</OfferingLabel>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Leadership Advisory & Workshops
