@@ -1411,7 +1411,7 @@ function LearningLabsPage() {
               {
                 title: "Career Pathing for Leaders: Develop Your People Without Losing Them",
                 date: "Tuesday, Mar 31, 2026",
-                time: "1:00–3:00 PM ET",
+                time: "12:00–1:00 PM ET",
                 link: "https://us06web.zoom.us/meeting/register/0V8Rd9N4TKmt1eS7OO3Rcw",
                 category: "Talent Retention — Focuses on practical, leader-driven career pathing that increases visibility into growth opportunities and strengthens retention without adding administrative burden.",
               },
