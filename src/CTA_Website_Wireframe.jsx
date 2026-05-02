@@ -62,7 +62,7 @@ function Nav() {
       <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
         <span
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "'Raleway', sans-serif",
             fontSize: 16,
             fontWeight: 700,
             color: COLORS.navy,
@@ -73,7 +73,7 @@ function Nav() {
         </span>
         <span
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Montserrat', sans-serif",
             fontSize: 16,
             color: COLORS.mediumGray,
             textTransform: "uppercase",
@@ -95,7 +95,7 @@ function Nav() {
               background: "none",
               border: "none",
               cursor: "pointer",
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               color: current === p ? COLORS.teal : COLORS.charcoal,
               fontWeight: current === p ? 600 : 400,
@@ -179,7 +179,7 @@ function SectionLabel({ text }) {
   return (
     <div
       style={{
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
         fontSize: 16,
         textTransform: "uppercase",
         letterSpacing: "0.2em",
@@ -213,7 +213,7 @@ function CTAButton({ text, variant = "primary" }) {
   return (
     <button
       style={{
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
         fontSize: 16,
         fontWeight: 600,
         letterSpacing: "0.04em",
@@ -251,7 +251,7 @@ function HomePage({ setCurrentPage }) {
         <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
           <div
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               textTransform: "uppercase",
               letterSpacing: "0.25em",
@@ -264,7 +264,7 @@ function HomePage({ setCurrentPage }) {
           </div>
           <h1
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: "clamp(34px, 8vw, 66px)",
               fontWeight: 700,
               color: COLORS.white,
@@ -277,7 +277,7 @@ function HomePage({ setCurrentPage }) {
           </h1>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 16,
               color: COLORS.lightGray,
               lineHeight: 1.7,
@@ -300,7 +300,7 @@ function HomePage({ setCurrentPage }) {
                 )
               }
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.04em",
@@ -319,7 +319,7 @@ function HomePage({ setCurrentPage }) {
               className="hero-cta-button"
               onClick={() => setCurrentPage("Learning Labs")}
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 16,
                 fontWeight: 500,
                 padding: "16px 40px",
@@ -337,19 +337,121 @@ function HomePage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* WHAT I DO - 5 OFFERINGS */}
+      {/* AI SPRINT PROMO */}
+      <section
+        style={{
+          background: COLORS.navy,
+          padding: "clamp(40px, 5vw, 64px) clamp(16px, 4vw, 64px)",
+          width: "100%",
+          boxSizing: "border-box",
+        }}
+      >
+        <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
+          <div
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 14,
+              textTransform: "uppercase",
+              letterSpacing: "0.2em",
+              color: COLORS.gold,
+              marginBottom: 16,
+              fontWeight: 700,
+            }}
+          >
+            NOW FORMING
+          </div>
+          <h2
+            style={{
+              fontFamily: "'Raleway', sans-serif",
+              fontSize: "clamp(26px, 4vw, 40px)",
+              fontWeight: 800,
+              color: COLORS.white,
+              margin: "0 0 16px 0",
+              lineHeight: 1.15,
+            }}
+          >
+            The AI Sprint Founding Cohort
+          </h2>
+          <p
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 16,
+              color: COLORS.lightGray,
+              lineHeight: 1.7,
+              margin: "0 0 28px 0",
+              maxWidth: 640,
+            }}
+          >
+            A six-week cross-company cohort for non-technical leaders and teams in automotive and manufacturing. Three people from your company build something they actually use. Executive sponsors attend the final showcase. Founding cohort locks in $10,000 per company.
+          </p>
+          <div
+            className="hero-cta-container"
+            style={{ display: "flex", gap: 16, flexWrap: "wrap", width: "100%", maxWidth: "100%" }}
+          >
+            <Link
+              to="/ai-sprint"
+              className="hero-cta-button"
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: 16,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                padding: "16px 40px",
+                border: "none",
+                background: COLORS.teal,
+                color: COLORS.white,
+                cursor: "pointer",
+                transition: "all 0.25s ease",
+                borderRadius: 4,
+                textDecoration: "none",
+                display: "inline-block",
+                textAlign: "center",
+                boxSizing: "border-box",
+              }}
+            >
+              Learn About the AI Sprint
+            </Link>
+            <button
+              className="hero-cta-button"
+              type="button"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/cadia-cheryl/15min?month=2026-02",
+                  "_blank"
+                )
+              }
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: 16,
+                fontWeight: 500,
+                padding: "16px 40px",
+                border: `1.5px solid ${COLORS.tealLight}`,
+                background: "transparent",
+                color: COLORS.tealLight,
+                cursor: "pointer",
+                letterSpacing: "0.04em",
+                borderRadius: 4,
+              }}
+            >
+              Book a Conversation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT I DO - 6 OFFERINGS */}
       <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.warmWhite, width: "100%", boxSizing: "border-box" }}>
         <SectionLabel text="How I Work With People" />
         <h2
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "'Raleway', sans-serif",
             fontSize: 34,
             color: COLORS.navy,
             margin: "0 0 48px 0",
             fontWeight: 600,
           }}
         >
-          Five ways in. One goal: capability that stays.
+          Six ways in. One goal: capability that stays.
         </h2>
         <div
           className="four-tiers-grid"
@@ -397,6 +499,13 @@ function HomePage({ setCurrentPage }) {
               cta: "Learn More →",
               onCta: () => navigate("/work-with-me#leadership-advisory"),
             },
+            {
+              label: "6 WEEKS · COHORT",
+              title: "AI Sprint",
+              desc: "A structured six-week program: three people from your company join a cross-company cohort, build a working AI solution on real work, and present at a showcase your executive sponsor attends. Founding cohort forming now.",
+              cta: "Learn More →",
+              onCta: () => navigate("/ai-sprint"),
+            },
           ].map((offer, i) => (
             <div
               key={i}
@@ -416,7 +525,7 @@ function HomePage({ setCurrentPage }) {
               <div>
                 <div
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Montserrat', sans-serif",
                     fontSize: 15,
                     textTransform: "uppercase",
                     letterSpacing: "0.15em",
@@ -429,7 +538,7 @@ function HomePage({ setCurrentPage }) {
                 </div>
                 <h3
                   style={{
-                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontFamily: "'Raleway', sans-serif",
                     fontSize: 16,
                     color: COLORS.navy,
                     margin: "0 0 16px 0",
@@ -440,7 +549,7 @@ function HomePage({ setCurrentPage }) {
                 </h3>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Montserrat', sans-serif",
                     fontSize: 15,
                     color: COLORS.charcoal,
                     lineHeight: 1.7,
@@ -453,7 +562,7 @@ function HomePage({ setCurrentPage }) {
               <button
                 onClick={offer.onCta}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Montserrat', sans-serif",
                   fontSize: 15,
                   fontWeight: 600,
                   color: COLORS.teal,
@@ -502,7 +611,7 @@ function HomePage({ setCurrentPage }) {
             <div key={i} style={{ textAlign: "center", flex: "1 1 180px" }}>
               <div
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontFamily: "'Raleway', sans-serif",
                   fontSize: 38,
                   fontWeight: 700,
                   color: COLORS.teal,
@@ -513,7 +622,7 @@ function HomePage({ setCurrentPage }) {
               </div>
               <div
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Montserrat', sans-serif",
                   fontSize: 15,
                   color: COLORS.mediumGray,
                   letterSpacing: "0.01em",
@@ -567,7 +676,7 @@ function HomePage({ setCurrentPage }) {
               </div>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Montserrat', sans-serif",
                   fontSize: 16,
                   color: COLORS.mediumGray,
                   textAlign: "center",
@@ -605,7 +714,7 @@ function HomePage({ setCurrentPage }) {
               </div>
               <p
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Montserrat', sans-serif",
                   fontSize: 16,
                   color: COLORS.mediumGray,
                   textAlign: "center",
@@ -625,7 +734,7 @@ function HomePage({ setCurrentPage }) {
           <SectionLabel text="What I Believe" />
           <h2
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 32,
               color: COLORS.navy,
               margin: "0 0 24px 0",
@@ -637,7 +746,7 @@ function HomePage({ setCurrentPage }) {
           </h2>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 16,
               color: COLORS.charcoal,
               lineHeight: 1.8,
@@ -648,7 +757,7 @@ function HomePage({ setCurrentPage }) {
           </p>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 16,
               color: COLORS.charcoal,
               lineHeight: 1.8,
@@ -683,7 +792,7 @@ function MyStoryPage() {
           <SectionLabel text="My Story" />
           <h1
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 40,
               color: COLORS.navy,
               margin: "0 0 40px 0",
@@ -717,7 +826,7 @@ function MyStoryPage() {
 
           <h2
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 24,
               color: COLORS.teal,
               margin: "40px 0 16px 0",
@@ -726,46 +835,46 @@ function MyStoryPage() {
           >
             Where It Started
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             I didn't take the traditional path into engineering. I started waitressing as a teenager, landed a tool and die apprenticeship, and built a 33-year career at Ford and Dauch from there.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             That apprenticeship changed everything. I graduated, worked as a journey person for a couple of years, and then a superintendent — someone who saw something in me before I fully saw it in myself — sponsored me into engineering. Not mentored. Sponsored. He put his name next to mine and opened a door I couldn't have opened alone.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0", fontStyle: "italic" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0", fontStyle: "italic" }}>
             That's the difference between someone who gives you advice and someone who changes your trajectory. I've never forgotten it.
           </p>
 
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
+          <h2 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
             What I Built Over 31 Years
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             I spent 31 years at Ford Motor Company. I came up through the trades, moved into engineering, and worked my way through gear engineering, tooling and gauging, and multiple management roles. I retired as the Prototype Operations Manager for Powertrain — responsible for transmission, engine, axle, and additive manufacturing.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
             After Ford, I served as the Global Director of Prototype Operations at American Axle and Manufacturing. Between those two roles, I spent over three decades inside complex manufacturing organizations, learning how they really work — not the org chart version, but the human version.
           </p>
 
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
+          <h2 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
             The Eight Years in Between
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             After leaving automotive, I founded and ran an organization that served the automotive industry for eight years. I built programs, ran cohorts, designed curriculum, and worked with senior leaders on culture, leadership, and organizational performance.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
             That experience gave me something I didn't expect: a deep understanding of how organizations adopt new ways of working and, more importantly, why they resist.
           </p>
 
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
+          <h2 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 24, color: COLORS.teal, margin: "40px 0 16px 0", fontWeight: 600 }}>
             The Shift to AI
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             In April 2025, I enrolled in an AI boot camp. I completed the full program. Then I went through it again. I joined a weekly mastermind where I continue to learn new skills every single week. And I started building.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 16px 0" }}>
             I have now logged thousands of hours of hands-on AI work. Not watching tutorials. Building. Custom GPTs, Copilot agents, prompt architectures, workflows, learning libraries, onboarding systems, matching tools, and full applications.
           </p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
+          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.8, margin: "0 0 32px 0" }}>
             I'm not a technologist. I have no technical background. I'm turning 60 this year. And that's exactly why I'm the right person to teach this. If I can build this level of capability through discipline and structured learning, so can you.
           </p>
 
@@ -778,7 +887,7 @@ function MyStoryPage() {
           >
             <p
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
+                fontFamily: "'Raleway', sans-serif",
                 fontSize: 16,
                 color: COLORS.white,
                 lineHeight: 1.6,
@@ -832,7 +941,7 @@ function MyStoryPage() {
                 </div>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Montserrat', sans-serif",
                     fontSize: 16,
                     color: COLORS.mediumGray,
                     textAlign: "center",
@@ -870,7 +979,7 @@ function MyStoryPage() {
                 </div>
                 <p
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "'Montserrat', sans-serif",
                     fontSize: 16,
                     color: COLORS.mediumGray,
                     textAlign: "center",
@@ -892,7 +1001,7 @@ function MyStoryPage() {
               )
             }
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.04em",
@@ -920,7 +1029,7 @@ function OfferingLabel({ children }) {
   return (
     <div
       style={{
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
         fontSize: 15,
         textTransform: "uppercase",
         letterSpacing: "0.15em",
@@ -950,7 +1059,7 @@ function WorkWithMePage({ setCurrentPage }) {
           <SectionLabel text="Work With Me" />
           <h1
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 38,
               color: COLORS.navy,
               margin: "0 0 16px 0",
@@ -958,11 +1067,11 @@ function WorkWithMePage({ setCurrentPage }) {
               lineHeight: 1.25,
             }}
           >
-            Five ways in. One goal.
+            Six ways in. One goal.
           </h1>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               color: COLORS.charcoal,
               lineHeight: 1.7,
@@ -976,24 +1085,24 @@ function WorkWithMePage({ setCurrentPage }) {
           {/* OFFERING 1: Learning Labs */}
           <div style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>FREE · WEEKLY · VIRTUAL</OfferingLabel>
-            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+            <h3 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Learning Labs
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               60 minutes. A real challenge. Something you can use the same day.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Every week, I host a live session where you work on an actual workplace problem using AI. Not theory. Not slides. You bring the challenge, we work it together, and you leave with a prompt, a workflow, or a system you can put to work immediately.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               16 topics spanning career development, operations, leadership, finance, communications, and more. Platform-agnostic — works in ChatGPT, Copilot, Claude, Gemini. Tuesdays at 12:00 PM ET.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Anyone doing knowledge work who wants to build real AI skills.
             </div>
             <button
               onClick={() => setCurrentPage("Learning Labs")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               See the Schedule →
             </button>
@@ -1002,27 +1111,27 @@ function WorkWithMePage({ setCurrentPage }) {
           {/* OFFERING 2: AI Opportunity Scan */}
           <div id="ai-opportunity-scan" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>HALF-DAY · VIRTUAL OR ON-SITE</OfferingLabel>
-            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+            <h3 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               AI Opportunity Scan
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               A focused session where I look inside your actual workflows and identify the real opportunities to save time and money with AI.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Most organizations know AI matters. What they don't have is someone who can walk into their operation, understand how the work actually gets done, and point to the specific places where AI creates measurable impact. That's what this is.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               I spend a half-day with your team — virtually or on-site — reviewing workflows, asking the questions vendors don't ask, and mapping the opportunities hiding in your day-to-day work. You get a clear, prioritized summary of where AI can reduce time, cost, and friction — and what it would take to get there.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               No software pitch. No generic recommendations. Just an experienced set of eyes on your operation.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Leaders and teams who know AI is relevant to their work but want someone with operational experience to show them exactly where — and why.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1031,27 +1140,27 @@ function WorkWithMePage({ setCurrentPage }) {
           {/* OFFERING 3: Leader Advisory */}
           <div id="leader-advisory" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>1:1 · VIRTUAL · 8 WEEKS</OfferingLabel>
-            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+            <h3 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Leader Advisory
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               A strategic thinking partnership for leaders applying AI to their real work.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Four sessions over eight weeks, built around your actual challenges — not hypothetical exercises. We work on your projects, build workflows tailored to your role, and develop the kind of capability you keep long after we're done.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               For some leaders, that means building AI into daily decision-making. For others, it means working through a high-stakes strategic challenge with a thinking partner who understands both the technology and the operational reality behind it.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               Every engagement is platform-agnostic and grounded in how your work actually gets done.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Executives, directors, managers, business owners, and professionals navigating AI in their work.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1060,16 +1169,16 @@ function WorkWithMePage({ setCurrentPage }) {
           {/* OFFERING 4: Organizational AI Adoption */}
           <div id="organizational-ai-adoption" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>TEAMS & ORGANIZATIONS · CUSTOM SCOPE</OfferingLabel>
-            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+            <h3 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Organizational AI Adoption
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               AI adoption doesn't fail because of bad technology. It fails because organizations introduce tools without understanding how work actually happens inside them — and without giving people the safety to experiment.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               This engagement meets your organization where it actually is. It can start with a focused readiness assessment to understand what's working, what's stuck, and what needs to change. It can move into adoption strategy — identifying the right workflows, building leadership alignment, and designing the conditions where AI use becomes sustainable. And when teams are ready, it becomes hands-on: building real AI-powered tools tied directly to their work.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.navy, fontWeight: 600, marginBottom: 12, marginTop: 20 }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.navy, fontWeight: 600, marginBottom: 12, marginTop: 20 }}>
               What this can include:
             </div>
             <div style={{ marginBottom: 16 }}>
@@ -1079,21 +1188,21 @@ function WorkWithMePage({ setCurrentPage }) {
                 "Team AI Accelerator — your team builds AI tools for their own work and leaves owning everything they create",
                 "A complete playbook documenting what was built, how it works, and how to sustain it",
               ].map((item, j) => (
-                <div key={j} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, paddingLeft: 16, position: "relative", marginBottom: 6 }}>
+                <div key={j} style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, paddingLeft: 16, position: "relative", marginBottom: 6 }}>
                   <span style={{ position: "absolute", left: 0, color: COLORS.teal, fontWeight: 700 }}>·</span>
                   {item}
                 </div>
               ))}
             </div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               Every phase is designed so your organization builds capability — not dependency. You keep everything.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Senior leaders, functional leaders, and organizations ready to move from AI curiosity to sustainable adoption across Operations, HR, Sales, Engineering, Communications, Finance, and more.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
@@ -1102,24 +1211,59 @@ function WorkWithMePage({ setCurrentPage }) {
           {/* OFFERING 5: Leadership Advisory & Workshops */}
           <div id="leadership-advisory" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
             <OfferingLabel>CUSTOM</OfferingLabel>
-            <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+            <h3 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
               Leadership Advisory & Workshops
             </h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
               Over 40 years of experience leading inside complex organizations — available for leadership development, executive coaching, team workshops, and keynote speaking.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
               This work draws on decades of leading teams through change, navigating organizational complexity, and building the kind of cultures where people do their best work. Available as standalone engagements or combined with AI advisory work.
             </p>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
               For: Organizations and leaders who need experienced, grounded leadership support.
             </div>
             <button
               onClick={() => window.open(CALENDLY_URL, "_blank")}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.teal, background: "none", border: "none", cursor: "pointer", padding: 0, letterSpacing: "0.02em", borderBottom: `1px solid ${COLORS.teal}` }}
             >
               Book a Conversation →
             </button>
+          </div>
+
+          {/* OFFERING 6: AI Sprint */}
+          <div id="ai-sprint" style={{ background: COLORS.white, border: `1px solid ${COLORS.lightGray}`, padding: "40px 40px 36px", marginBottom: 24 }}>
+            <OfferingLabel>6 WEEKS · COHORT · CROSS-COMPANY</OfferingLabel>
+            <h3 style={{ fontFamily: "'Raleway', sans-serif", fontSize: 26, color: COLORS.navy, margin: "0 0 16px 0", fontWeight: 600 }}>
+              AI Sprint
+            </h3>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              A structured six-week cohort for non-technical leaders and teams in automotive and manufacturing. Three people from your company join peers from non-competing suppliers, work on real workflows, and leave with a tool or solution they built—not a certificate, not a generic demo.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 12px 0" }}>
+              The program includes pre-program intake, weekly working sessions, cross-company peer learning, and a showcase where executive sponsors see live demonstrations of what their teams built. Two strategic advisory sessions are reserved for your executive sponsor to align on priorities and what comes next.
+            </p>
+            <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 15, color: COLORS.charcoal, lineHeight: 1.7, margin: "0 0 20px 0" }}>
+              Founding cohort members lock in preferred pricing and help shape the program. Minimum six companies, maximum ten, three participants per company.
+            </p>
+            <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: 16, color: COLORS.mediumGray, fontStyle: "italic", marginBottom: 20 }}>
+              For: Organizations that want their people building with AI on real work, with executive sponsorship and peer learning across companies.
+            </div>
+            <Link
+              to="/ai-sprint"
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontSize: 15,
+                fontWeight: 600,
+                color: COLORS.teal,
+                letterSpacing: "0.02em",
+                borderBottom: `1px solid ${COLORS.teal}`,
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              Learn More →
+            </Link>
           </div>
 
         <div
@@ -1133,7 +1277,7 @@ function WorkWithMePage({ setCurrentPage }) {
         >
           <h2
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 26,
               color: COLORS.navy,
               margin: "0 0 12px 0",
@@ -1145,7 +1289,7 @@ function WorkWithMePage({ setCurrentPage }) {
 
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               color: COLORS.charcoal,
               lineHeight: 1.7,
@@ -1161,7 +1305,7 @@ function WorkWithMePage({ setCurrentPage }) {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 16,
               fontWeight: 600,
               letterSpacing: "0.04em",
@@ -1261,7 +1405,7 @@ function LearningLabsPage() {
           <SectionLabel text="Learning Labs" />
           <h1
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 38,
               color: COLORS.navy,
               margin: "0 0 16px 0",
@@ -1273,7 +1417,7 @@ function LearningLabsPage() {
           </h1>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               color: COLORS.charcoal,
               lineHeight: 1.7,
@@ -1284,7 +1428,7 @@ function LearningLabsPage() {
           </p>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               color: COLORS.mediumGray,
               lineHeight: 1.7,
@@ -1300,7 +1444,7 @@ function LearningLabsPage() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 16,
                 color: COLORS.teal,
                 textDecoration: "none",
@@ -1316,7 +1460,7 @@ function LearningLabsPage() {
 
           <h2
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 26,
               color: COLORS.navy,
               margin: "0 0 24px 0",
@@ -1340,7 +1484,7 @@ function LearningLabsPage() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Montserrat', sans-serif",
                   fontSize: 15,
                   fontWeight: selectedCategory === cat ? 600 : 400,
                   padding: "8px 16px",
@@ -1570,7 +1714,7 @@ function LearningLabsPage() {
                     <div key={`separator-${i}`} style={{ marginTop: 48, marginBottom: 24 }}>
                       <div
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Montserrat', sans-serif",
                           fontSize: 15,
                           textTransform: "uppercase",
                           letterSpacing: "0.15em",
@@ -1602,7 +1746,7 @@ function LearningLabsPage() {
                       position: "absolute",
                       top: 16,
                       right: 16,
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Montserrat', sans-serif",
                       fontSize: 15,
                       fontWeight: 600,
                       textTransform: "uppercase",
@@ -1630,7 +1774,7 @@ function LearningLabsPage() {
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
                       <h3
                         style={{
-                          fontFamily: "'Playfair Display', Georgia, serif",
+                          fontFamily: "'Raleway', sans-serif",
                           fontSize: 16,
                           color: COLORS.navy,
                           margin: 0,
@@ -1643,7 +1787,7 @@ function LearningLabsPage() {
                       {lab.labCategory && (
                         <span
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "'Montserrat', sans-serif",
                             fontSize: 15,
                             fontWeight: 600,
                             textTransform: "uppercase",
@@ -1660,7 +1804,7 @@ function LearningLabsPage() {
                     </div>
                     <div
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Montserrat', sans-serif",
                         fontSize: 16,
                         color: COLORS.mediumGray,
                         marginBottom: lab.category ? 8 : 0,
@@ -1674,7 +1818,7 @@ function LearningLabsPage() {
                       {lab.isPast && (
                         <span
                           style={{
-                            fontFamily: "'DM Sans', sans-serif",
+                            fontFamily: "'Montserrat', sans-serif",
                             fontSize: 15,
                             fontWeight: 600,
                             textTransform: "uppercase",
@@ -1692,7 +1836,7 @@ function LearningLabsPage() {
                     {lab.category && (
                       <div
                         style={{
-                          fontFamily: "'DM Sans', sans-serif",
+                          fontFamily: "'Montserrat', sans-serif",
                           fontSize: 15,
                           color: COLORS.charcoal,
                           fontStyle: "italic",
@@ -1710,7 +1854,7 @@ function LearningLabsPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Montserrat', sans-serif",
                         fontSize: 16,
                         color: COLORS.teal,
                         textDecoration: "none",
@@ -1727,7 +1871,7 @@ function LearningLabsPage() {
                     <button
                       onClick={() => window.open(lab.link, "_blank")}
                       style={{
-                        fontFamily: "'DM Sans', sans-serif",
+                        fontFamily: "'Montserrat', sans-serif",
                         fontSize: 16,
                         fontWeight: 600,
                         letterSpacing: "0.04em",
@@ -1760,7 +1904,7 @@ function LearningLabsPage() {
           >
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 15,
                 color: COLORS.charcoal,
                 lineHeight: 1.7,
@@ -1782,7 +1926,7 @@ function LearningLabsPage() {
           >
             <h2
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
+                fontFamily: "'Raleway', sans-serif",
                 fontSize: 26,
                 color: COLORS.navy,
                 margin: "0 0 12px 0",
@@ -1794,7 +1938,7 @@ function LearningLabsPage() {
 
             <p
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 15,
                 color: COLORS.charcoal,
                 lineHeight: 1.7,
@@ -1810,7 +1954,7 @@ function LearningLabsPage() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.04em",
@@ -1852,7 +1996,7 @@ function ContactPage() {
           <SectionLabel text="Let's Talk" />
           <h1
             style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: 40,
               color: COLORS.navy,
               margin: "0 0 24px 0",
@@ -1864,7 +2008,7 @@ function ContactPage() {
           </h1>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 15,
               color: COLORS.charcoal,
               lineHeight: 1.8,
@@ -1884,7 +2028,7 @@ function ContactPage() {
                 )
               }
               style={{
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'Montserrat', sans-serif",
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: "0.04em",
@@ -1903,7 +2047,7 @@ function ContactPage() {
           </div>
           <p
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Montserrat', sans-serif",
               fontSize: 16,
               color: "#2C5282",
               lineHeight: 1.7,
@@ -1928,6 +2072,242 @@ function ContactPage() {
   );
 }
 
+// ============ AI SPRINT PAGE ============
+function AISprintPage() {
+  const weeks = [
+    {
+      dot: "Pre",
+      title: "Survey & Intake",
+      desc: "Every participant completes a pre-program survey. We map where each person is on their AI journey, what their real pain points are, and what they want to build. No one starts from the same place — and the program meets them where they are.",
+      last: false,
+    },
+    {
+      dot: "1",
+      title: "Foundations & Orientation",
+      desc: "Understanding how AI actually works, what it can and cannot do, and how to use it as a genuine co-pilot — not a toy. Participants identify the specific problem or workflow they will focus on building a solution for.",
+      last: false,
+    },
+    {
+      dot: "2",
+      title: "Prompting & Practical Application",
+      desc: "Hands-on practice with real work scenarios. Participants learn to get consistent, high-quality output from AI tools applied to their actual job functions — not generic demos.",
+      last: false,
+    },
+    {
+      dot: "3",
+      title: "Building Your Solution",
+      desc: "Each participant begins building their tool or solution with guided support. The cross-company cohort format means people learn from each other's approaches, challenges, and breakthroughs in real time.",
+      last: false,
+    },
+    {
+      dot: "4",
+      title: "Refine & Stress-Test",
+      desc: "Participants refine their builds, troubleshoot what is not working, and pressure-test their solutions with the group. Peer feedback accelerates what individual learning cannot.",
+      last: false,
+    },
+    {
+      dot: "5",
+      title: "Polish & Prepare for Showcase",
+      desc: "Final refinements. Participants prepare to present their tool or solution to the full group, including their executive sponsor. This is not a slide deck — it is a live demonstration of something that works.",
+      last: false,
+    },
+    {
+      dot: "6",
+      title: "Showcase Session — Executive Sponsors Attend",
+      desc: "Each team presents what they built. Executive sponsors from every company are in the room. The energy in this session is different from any training program — because this is proof, not theory.",
+      last: true,
+    },
+  ];
+
+  const includes = [
+    {
+      title: "3 Team Members — Full Six Weeks",
+      text: "Your people attend every session and build their solutions from week one through the showcase.",
+    },
+    {
+      title: "Pre-Program Survey & Personalization",
+      text: "Content is shaped by your team's actual pain points and goals — not a generic curriculum.",
+    },
+    {
+      title: "Cross-Company Cohort Access",
+      text: "Peers from non-competing manufacturers. Your team learns from people solving similar problems in different contexts.",
+    },
+    {
+      title: "A Working Tool or Solution — Built by Your Team",
+      text: "Every participant leaves with something real. Not a certificate. Not a summary deck. Something they built and can use Monday morning.",
+    },
+    {
+      title: "Executive Sponsor Access to Showcase Session",
+      text: "Your executive sponsor attends the final session to see what the team built and hear from the full cohort.",
+    },
+    {
+      title: "Two Strategic Advisory Sessions for the Executive Sponsor",
+      text: "Reserved time with Cheryl to discuss AI priorities, team progress, and what comes next for the organization beyond the cohort.",
+    },
+  ];
+
+  const cohortMath = [
+    { label: "Minimum cohort size", value: "6 companies" },
+    { label: "Maximum cohort size", value: "10 companies" },
+    { label: "Participants per company", value: "3 people" },
+    { label: "Executive one-on-ones", value: "2 × 30 min" },
+    { label: "Program length", value: "6 weeks" },
+    { label: "Companies are non-competing", value: "Required", last: true },
+  ];
+
+  const whoYes = [
+    "You are a Tier 1 or Tier 2 automotive or manufacturing supplier",
+    "Your leadership team knows AI matters but hasn't made it a real practice yet",
+    "You want your people building with AI, not just watching demos",
+    "You have an executive who is ready to sponsor and champion the initiative",
+    "You want peer learning across companies, not a solo training program",
+  ];
+
+  const whoNo = [
+    "You are looking for a technical AI implementation or software build",
+    "You need to train 50+ people at once (ask about the enterprise workshop option)",
+    "You are in the same market segment as another cohort participant",
+    "Leadership is not aligned or willing to sponsor the program",
+  ];
+
+  return (
+    <div className="ai-sprint-page">
+      <div className="as-hero">
+        <div className="as-hero-eyebrow">Cheryl Thompson Advisory · Corporate Cohort Program</div>
+        <div className="as-hero-title">
+          The <span>AI Sprint</span>
+        </div>
+        <div className="as-hero-subtitle">A six-week cohort where your team builds something they actually use.</div>
+        <div className="as-gold-rule" />
+        <div className="as-hero-tagline">
+          A cross-company cohort for <strong>non-technical leaders and their teams</strong> in automotive and manufacturing — where your people don't just learn about AI, they build something with it.
+        </div>
+      </div>
+
+      <div className="as-problem-strip">
+        <div className="as-problem-strip-label">The Problem</div>
+        <div className="as-problem-strip-text">
+          Your team has heard the AI hype. They've sat through the webinars. They still aren't using it. The AI Sprint fixes that.
+        </div>
+      </div>
+
+      <div className="as-content">
+        <p className="as-intro-text">
+          The AI Sprint is a structured six-week program where three people from your company join peers from non-competing manufacturers and learn to use AI in their actual work. Every participant finishes with a working tool or solution they built themselves, and the skills to keep building after the program ends. Your executive sponsor sees the results firsthand at the final showcase session.
+        </p>
+
+        <div className="as-section-label">How It Works</div>
+        <div className="as-timeline">
+          {weeks.map((w) => (
+            <div key={w.dot} className={`as-week${w.last ? " as-week--last" : ""}`}>
+              <div className="as-week-dot">{w.dot}</div>
+              <div className="as-week-body">
+                <div className="as-week-title">{w.title}</div>
+                <div className="as-week-desc">{w.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="as-section-label">What Your Company Gets</div>
+        <div className="as-includes-grid">
+          {includes.map((item) => (
+            <div key={item.title} className="as-include-item">
+              <div className="as-include-check">✓</div>
+              <div className="as-include-text">
+                <strong>{item.title}</strong>
+                {item.text}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="as-section-label">Investment</div>
+        <div className="as-pricing-block">
+          <div className="as-pricing-left">
+            <div className="as-pricing-eyebrow">Founding Cohort Rate</div>
+            <div className="as-pricing-amount">
+              <span>$</span>10,000
+            </div>
+            <div className="as-pricing-desc">
+              Per company. Includes 3 participants for all six weeks, executive sponsor access to the showcase session, and two one-on-one advisory sessions.
+            </div>
+            <div className="as-pricing-note">
+              Founding cohort members lock in $10,000 and help shape the program. Cohort two begins at $15,000 with expanded executive advisory time.
+            </div>
+          </div>
+          <div className="as-pricing-right">
+            <div className="as-pricing-right-label">Cohort Economics</div>
+            <ul className="as-cohort-math">
+              {cohortMath.map((row) => (
+                <li key={row.label} className={row.last ? "as-cohort-math-last" : ""}>
+                  {row.label} <span>{row.value}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="as-section-label">Who This Is For</div>
+        <div className="as-who-box">
+          <div className="as-who-col">
+            <div className="as-who-col-label">Right for you if...</div>
+            <ul>
+              {whoYes.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="as-who-col">
+            <div className="as-who-col-label">Not the right fit if...</div>
+            <ul>
+              {whoNo.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="as-proof-block">
+          <div className="as-proof-label">What This Looks Like in Practice</div>
+          <div className="as-proof-quote">
+            Cheryl helped our leaders move past curiosity and start using AI on real work. The difference was her ability to translate between manufacturing reality and what AI can actually do. Our team built tools they still use today.
+          </div>
+          <div className="as-proof-attribution">
+            — <strong>Senior leader</strong>, Tier 1 automotive supplier
+          </div>
+        </div>
+
+        <div className="as-about-strip">
+          <div className="as-about-label">About Your Facilitator</div>
+          <div className="as-about-text">
+            <strong>Cheryl Thompson</strong> brings 33 years of operations and engineering experience at Ford Motor Company and American Axle & Manufacturing, combined with 1,300+ hours of hands-on AI building and implementation. She holds the SuperHuman AI Certified credential and is completing certification through Workplace Culture Lens, which informs how she helps organizations navigate the cultural side of AI adoption. She founded and led a seven-year organization serving 75+ automotive and manufacturing companies, where she trained more than 2,000 professionals on emerging technology adoption. She is not a technologist who learned manufacturing. She is a manufacturing and operations leader who built a serious AI practice — and that difference matters when she is in the room with your team.
+          </div>
+        </div>
+      </div>
+
+      <div className="as-cta-block">
+        <div className="as-cta-label">Ready to Join the Cohort?</div>
+        <div className="as-cta-headline">
+          Seats are limited to 10 companies.
+          <br />
+          Founding cohort is forming now.
+        </div>
+        <div className="as-cta-sub">Reach out directly to start the conversation. No forms. No funnels.</div>
+        <div className="as-cta-contact">
+          Cheryl Thompson &nbsp;·&nbsp;{" "}
+          <a href="mailto:cheryl@cherylthompson.net">cheryl@cherylthompson.net</a>
+          &nbsp;·&nbsp;{" "}
+          <a href="https://cherylthompson.net" target="_blank" rel="noopener noreferrer">
+            cherylthompson.net
+          </a>
+        </div>
+        <div className="as-cta-seats">Founding cohort · 6–10 companies · $10,000 per company</div>
+      </div>
+    </div>
+  );
+}
+
 // ============ FOOTER ============
 function Footer() {
   return (
@@ -1945,7 +2325,7 @@ function Footer() {
       <div>
         <span
           style={{
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily: "'Raleway', sans-serif",
             fontSize: 16,
             fontWeight: 600,
             color: COLORS.white,
@@ -1955,7 +2335,7 @@ function Footer() {
         </span>
         <span
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Montserrat', sans-serif",
             fontSize: 16,
             color: COLORS.mediumGray,
             textTransform: "uppercase",
@@ -1968,7 +2348,7 @@ function Footer() {
       </div>
       <div
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Montserrat', sans-serif",
           fontSize: 16,
           color: COLORS.mediumGray,
         }}
@@ -1997,7 +2377,7 @@ export default function App() {
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", overflowX: "hidden" }}>
       <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
       />
       <ScrollToTop />
@@ -2008,6 +2388,7 @@ export default function App() {
           <Route path="/my-story" element={<MyStoryPage />} />
           <Route path="/work-with-me" element={<WorkWithMePage setCurrentPage={setCurrentPage} />} />
           <Route path="/learning-labs" element={<LearningLabsPage />} />
+          <Route path="/ai-sprint" element={<AISprintPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>

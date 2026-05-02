@@ -149,7 +149,7 @@ body {
     background: none;
     border: none;
     border-bottom: 1px solid #E2E8F0;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 19px;
     color: #2D3748;
     cursor: pointer;
@@ -177,4 +177,612 @@ body {
 .contact-email-link:hover {
   color: #1e4976 !important;
   text-decoration: underline !important;
+}
+
+/* ============ AI Sprint offer page ============ */
+.ai-sprint-page {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  background: #F8FAF9;
+  color: #2D3748;
+  font-size: 11pt;
+  line-height: 1.65;
+}
+
+.ai-sprint-page * {
+  box-sizing: border-box;
+}
+
+/* Hero */
+.ai-sprint-page .as-hero {
+  background: #1B2A3D;
+  padding: 52px 56px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-sprint-page .as-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: rgba(13, 139, 139, 0.1);
+}
+
+.ai-sprint-page .as-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 30%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(212, 168, 67, 0.07);
+}
+
+.ai-sprint-page .as-hero-eyebrow {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #14B8A6;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-sprint-page .as-hero-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 42pt;
+  color: #F8FAF9;
+  line-height: 1;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-sprint-page .as-hero-title span {
+  color: #14B8A6;
+}
+
+.ai-sprint-page .as-hero-subtitle {
+  font-style: italic;
+  font-size: 13pt;
+  color: #14B8A6;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-sprint-page .as-gold-rule {
+  height: 2px;
+  width: 60px;
+  background: #D4A843;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-sprint-page .as-hero-tagline {
+  font-size: 12pt;
+  color: #E2E8F0;
+  max-width: 580px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.ai-sprint-page .as-hero-tagline strong {
+  color: #F8FAF9;
+}
+
+/* Problem strip */
+.ai-sprint-page .as-problem-strip {
+  background: #0D8B8B;
+  padding: 22px 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ai-sprint-page .as-problem-strip-label {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ai-sprint-page .as-problem-strip-text {
+  font-size: 11pt;
+  color: white;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Main content */
+.ai-sprint-page .as-content {
+  padding: 44px 56px;
+}
+
+.ai-sprint-page .as-intro-text {
+  font-size: 12pt;
+  line-height: 1.75;
+  color: #2D3748;
+  margin: 0 0 36px;
+  max-width: 720px;
+}
+
+.ai-sprint-page .as-section-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #0D8B8B;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #D4A843;
+  display: inline-block;
+}
+
+/* Timeline */
+.ai-sprint-page .as-timeline {
+  margin: 0 0 40px;
+  position: relative;
+}
+
+.ai-sprint-page .as-timeline::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #E2E8F0;
+}
+
+.ai-sprint-page .as-week {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.ai-sprint-page .as-week-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1B2A3D;
+  color: #14B8A6;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 13pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.ai-sprint-page .as-week--last .as-week-dot {
+  background: #0D8B8B;
+  color: white;
+}
+
+.ai-sprint-page .as-week-body {
+  padding-top: 8px;
+}
+
+.ai-sprint-page .as-week-title {
+  font-weight: 700;
+  font-size: 11pt;
+  color: #1B2A3D;
+  margin-bottom: 3px;
+}
+
+.ai-sprint-page .as-week--last .as-week-title {
+  color: #0D8B8B;
+}
+
+.ai-sprint-page .as-week-desc {
+  font-size: 10pt;
+  color: #64748B;
+  line-height: 1.55;
+}
+
+/* Includes grid */
+.ai-sprint-page .as-includes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.ai-sprint-page .as-include-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-left: 3px solid #0D8B8B;
+}
+
+.ai-sprint-page .as-include-check {
+  color: #0D8B8B;
+  font-weight: 900;
+  font-size: 14pt;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.ai-sprint-page .as-include-text {
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #2D3748;
+}
+
+.ai-sprint-page .as-include-text strong {
+  display: block;
+  color: #1B2A3D;
+  font-size: 10.5pt;
+  margin-bottom: 2px;
+}
+
+/* Pricing */
+.ai-sprint-page .as-pricing-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 40px;
+  border: 1px solid #E2E8F0;
+}
+
+.ai-sprint-page .as-pricing-left {
+  background: #1B2A3D;
+  padding: 32px 30px;
+  color: #F8FAF9;
+}
+
+.ai-sprint-page .as-pricing-eyebrow {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #14B8A6;
+  margin-bottom: 10px;
+}
+
+.ai-sprint-page .as-pricing-amount {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 36pt;
+  color: #F8FAF9;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.ai-sprint-page .as-pricing-amount span {
+  font-size: 16pt;
+  color: #14B8A6;
+}
+
+.ai-sprint-page .as-pricing-desc {
+  font-size: 10pt;
+  color: #E2E8F0;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.ai-sprint-page .as-pricing-note {
+  margin-top: 14px;
+  font-size: 9pt;
+  font-style: italic;
+  color: #D4A843;
+}
+
+.ai-sprint-page .as-pricing-right {
+  background: #FDF6EC;
+  padding: 32px 30px;
+}
+
+.ai-sprint-page .as-pricing-right-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1B2A3D;
+  margin-bottom: 14px;
+}
+
+.ai-sprint-page .as-cohort-math {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-sprint-page .as-cohort-math li {
+  font-size: 10.5pt;
+  color: #2D3748;
+  margin-bottom: 8px;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px dashed #E2E8F0;
+  padding-bottom: 8px;
+}
+
+.ai-sprint-page .as-cohort-math li.as-cohort-math-last {
+  border-bottom: none;
+  font-weight: 700;
+  color: #1B2A3D;
+  font-size: 11pt;
+  padding-bottom: 0;
+}
+
+.ai-sprint-page .as-cohort-math li span {
+  font-weight: 700;
+  color: #0D8B8B;
+  flex-shrink: 0;
+}
+
+/* Who box */
+.ai-sprint-page .as-who-box {
+  background: #1B2A3D;
+  padding: 28px 32px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.ai-sprint-page .as-who-col-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #14B8A6;
+  margin-bottom: 12px;
+}
+
+.ai-sprint-page .as-who-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-sprint-page .as-who-col li {
+  font-size: 10pt;
+  color: #E2E8F0;
+  margin-bottom: 7px;
+  list-style: none;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.ai-sprint-page .as-who-col li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #D4A843;
+  font-weight: 700;
+}
+
+/* Proof */
+.ai-sprint-page .as-proof-block {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-top: 3px solid #D4A843;
+  padding: 26px 30px;
+  margin-bottom: 40px;
+}
+
+.ai-sprint-page .as-proof-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #0D8B8B;
+  margin-bottom: 14px;
+}
+
+.ai-sprint-page .as-proof-quote {
+  font-size: 12pt;
+  line-height: 1.65;
+  color: #2D3748;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.ai-sprint-page .as-proof-quote::before {
+  content: '"';
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 32pt;
+  color: #D4A843;
+  line-height: 0;
+  margin-right: 4px;
+  vertical-align: -8px;
+}
+
+.ai-sprint-page .as-proof-attribution {
+  font-size: 9.5pt;
+  color: #64748B;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.ai-sprint-page .as-proof-attribution strong {
+  color: #1B2A3D;
+}
+
+/* About */
+.ai-sprint-page .as-about-strip {
+  background: #FDF6EC;
+  border-left: 4px solid #D4A843;
+  padding: 24px 28px;
+  margin-bottom: 40px;
+}
+
+.ai-sprint-page .as-about-label {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4A843;
+  margin-bottom: 8px;
+}
+
+.ai-sprint-page .as-about-text {
+  font-size: 10.5pt;
+  line-height: 1.7;
+  color: #2D3748;
+}
+
+.ai-sprint-page .as-about-text strong {
+  color: #1B2A3D;
+}
+
+/* CTA */
+.ai-sprint-page .as-cta-block {
+  background: #0D8B8B;
+  padding: 32px 40px;
+  text-align: center;
+}
+
+.ai-sprint-page .as-cta-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.ai-sprint-page .as-cta-headline {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 20pt;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.ai-sprint-page .as-cta-sub {
+  font-size: 11pt;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
+}
+
+.ai-sprint-page .as-cta-contact {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.ai-sprint-page .as-cta-contact a {
+  color: #D4A843;
+  text-decoration: none;
+}
+
+.ai-sprint-page .as-cta-contact a:hover {
+  text-decoration: underline;
+}
+
+.ai-sprint-page .as-cta-seats {
+  display: inline-block;
+  background: #1B2A3D;
+  color: #14B8A6;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .ai-sprint-page .as-hero {
+    padding: 36px 24px 32px;
+  }
+
+  .ai-sprint-page .as-hero-title {
+    font-size: 28pt;
+  }
+
+  .ai-sprint-page .as-hero-subtitle {
+    font-size: 11pt;
+  }
+
+  .ai-sprint-page .as-hero-tagline {
+    font-size: 11pt;
+  }
+
+  .ai-sprint-page .as-problem-strip {
+    padding: 18px 24px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ai-sprint-page .as-problem-strip-label {
+    white-space: normal;
+  }
+
+  .ai-sprint-page .as-content {
+    padding: 32px 24px;
+  }
+
+  .ai-sprint-page .as-intro-text {
+    font-size: 11pt;
+  }
+
+  .ai-sprint-page .as-includes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-sprint-page .as-pricing-block {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-sprint-page .as-pricing-amount {
+    font-size: 28pt;
+  }
+
+  .ai-sprint-page .as-who-box {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ai-sprint-page .as-cta-block {
+    padding: 28px 24px;
+  }
+
+  .ai-sprint-page .as-cta-headline {
+    font-size: 16pt;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-sprint-page .as-hero-title {
+    font-size: 24pt;
+  }
+
+  .ai-sprint-page .as-timeline::before {
+    display: none;
+  }
 }
