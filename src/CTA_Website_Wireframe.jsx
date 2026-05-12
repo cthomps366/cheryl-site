@@ -779,6 +779,34 @@ function HomePage({ setCurrentPage }) {
 </button>
         </div>
       </section>
+
+      {/* PODCAST APPEARANCE SECTION */}
+      <section style={{ padding: "clamp(40px, 6vw, 80px) clamp(16px, 4vw, 64px)", background: COLORS.white, width: "100%", boxSizing: "border-box" }}>
+        <div style={{ maxWidth: 960, width: "100%", margin: "0 auto" }}>
+          <SectionLabel text="Latest Podcast Appearance" />
+          <div style={{ width: "100%", borderRadius: 6, overflow: "hidden", marginTop: 24 }}>
+            <iframe
+              style={{ width: "100%", height: 200, border: "none", display: "block" }}
+              frameBorder="no"
+              scrolling="no"
+              allow="clipboard-write"
+              src="https://player.captivate.fm/episode/dd1349aa-9c7c-4859-a3ec-a87e2bafb2b4/"
+              title="Podcast episode"
+            />
+          </div>
+          <p
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: 16,
+              color: COLORS.mediumGray,
+              textAlign: "center",
+              margin: "16px 0 0 0",
+            }}
+          >
+            A conversation with Jan Griffiths and Tom Roberts on the Auto Supply Chain Champions Podcast — what it takes to move from playing with AI to putting it to work.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
@@ -987,6 +1015,29 @@ function MyStoryPage() {
                   }}
                 >
                   A conversation with Jan Griffiths on the Automotive Leaders Podcast
+                </p>
+              </div>
+              <div style={{ flex: "1 1 100%", maxWidth: 960, margin: "16px auto 0" }}>
+                <div style={{ width: "100%", borderRadius: 6, overflow: "hidden" }}>
+                  <iframe
+                    style={{ width: "100%", height: 200, border: "none", display: "block" }}
+                    frameBorder="no"
+                    scrolling="no"
+                    allow="clipboard-write"
+                    src="https://player.captivate.fm/episode/dd1349aa-9c7c-4859-a3ec-a87e2bafb2b4/"
+                    title="Podcast episode"
+                  />
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontSize: 16,
+                    color: COLORS.mediumGray,
+                    textAlign: "center",
+                    margin: "16px 0 0 0",
+                  }}
+                >
+                  A conversation with Jan Griffiths and Tom Roberts on the Auto Supply Chain Champions Podcast — what it takes to move from playing with AI to putting it to work.
                 </p>
               </div>
             </div>
