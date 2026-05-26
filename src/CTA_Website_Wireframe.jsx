@@ -2129,19 +2129,19 @@ function AISprintPage() {
     {
       dot: "Pre",
       title: "Survey & Intake",
-      desc: "Every participant completes a pre-program survey. We map where each person is on their AI journey, what their real pain points are, and what they want to build. No one starts from the same place — and the program meets them where they are.",
+      desc: "Every participant completes a pre-program survey. We map where each person is on their AI journey, what their real pain points are, and what they want to build. No one starts from the same place, and the program meets them where they are.",
       last: false,
     },
     {
       dot: "1",
       title: "Foundations & Orientation",
-      desc: "Understanding how AI actually works, what it can and cannot do, and how to use it as a genuine co-pilot — not a toy. Participants identify the specific problem or workflow they will focus on building a solution for.",
+      desc: "Participants learn what Copilot can actually do beyond the chat box, then identify the specific repetitive task in their own work they will turn into a workflow over the six weeks.",
       last: false,
     },
     {
       dot: "2",
       title: "Prompting & Practical Application",
-      desc: "Hands-on practice with real work scenarios. Participants learn to get consistent, high-quality output from AI tools applied to their actual job functions — not generic demos.",
+      desc: "Hands-on practice with real work scenarios. Participants learn to get consistent, high-quality output from AI tools applied to their actual job functions, not generic demos.",
       last: false,
     },
     {
@@ -2159,33 +2159,33 @@ function AISprintPage() {
     {
       dot: "5",
       title: "Polish & Prepare for Showcase",
-      desc: "Final refinements. Participants prepare to present their tool or solution to the full group, including their executive sponsor. This is not a slide deck — it is a live demonstration of something that works.",
+      desc: "Final refinements. Participants prepare to present their tool or solution to the full group, including their executive sponsor. This is not a slide deck. It is a live demonstration of something that works.",
       last: false,
     },
     {
       dot: "6",
-      title: "Showcase Session — Executive Sponsors Attend",
-      desc: "Each team presents what they built. Executive sponsors from every company are in the room. The energy in this session is different from any training program — because this is proof, not theory.",
+      title: "Showcase Session. Executive Sponsors Attend",
+      desc: "Each team presents what they built. Executive sponsors from every company are in the room. The energy in this session is different from any training program, because this is proof, not theory.",
       last: true,
     },
   ];
 
   const includes = [
     {
-      title: "3 Team Members — Full Six Weeks",
+      title: "3 Team Members, Full Six Weeks",
       text: "Your people attend every session and build their solutions from week one through the showcase.",
     },
     {
       title: "Pre-Program Survey & Personalization",
-      text: "Content is shaped by your team's actual pain points and goals — not a generic curriculum.",
+      text: "Content is shaped by your team's actual pain points and goals, not a generic curriculum.",
     },
     {
       title: "Cross-Company Cohort Access",
       text: "Peers from non-competing manufacturers. Your team learns from people solving similar problems in different contexts.",
     },
     {
-      title: "A Working Tool or Solution — Built by Your Team",
-      text: "Every participant leaves with something real. Not a certificate. Not a summary deck. Something they built and can use Monday morning.",
+      title: "A Working Build, Not a Certificate",
+      text: "Every participant leaves with an AI workflow they built and can use Monday morning: a scheduled report, a custom agent, or a workflow that runs on its own. Not a certificate. Not a summary deck. Something real that runs.",
     },
     {
       title: "Executive Sponsor Access to Showcase Session",
@@ -2228,23 +2228,23 @@ function AISprintPage() {
         <div className="as-hero-title">
           The <span>AI Sprint</span>
         </div>
-        <div className="as-hero-subtitle">A six-week cohort where your team builds something they actually use.</div>
+        <div className="as-hero-subtitle">A six-week cohort where your team builds AI workflows that run without them.</div>
         <div className="as-gold-rule" />
         <div className="as-hero-tagline">
-          A cross-company cohort for <strong>non-technical leaders and their teams</strong> in automotive and manufacturing — where your people don't just learn about AI, they build something with it.
+          A cross-company cohort for <strong>non-technical leaders and their teams</strong> in automotive and manufacturing, where your people don't just learn about AI, they build something with it.
         </div>
       </div>
 
       <div className="as-problem-strip">
         <div className="as-problem-strip-label">The Problem</div>
         <div className="as-problem-strip-text">
-          Your team has heard the AI hype. They've sat through the webinars. They still aren't using it. The AI Sprint fixes that.
+          Your company bought Copilot. The licenses show up on the invoice every month. Six months in, your people still use it like a search engine, a question here, a quick draft there. The capability you are paying for is sitting unused. The AI Sprint changes that. Your team goes from typing one-off questions to building AI that runs on its own.
         </div>
       </div>
 
       <div className="as-content">
         <p className="as-intro-text">
-          The AI Sprint is a structured six-week program where three people from your company join peers from non-competing manufacturers and learn to use AI in their actual work. Every participant finishes with a working tool or solution they built themselves, and the skills to keep building after the program ends. Your executive sponsor sees the results firsthand at the final showcase session.
+          The AI Sprint is a structured six-week program where three people from your company join peers from non-competing manufacturers and build AI workflows for their actual work. They start where most people do, asking Copilot questions one at a time. They finish having built something that runs without them: a status report that writes itself from a shared file every Monday morning, an agent that holds their team's process, a workflow that turns a manual Friday afternoon into something that happens while they sleep. Every participant leaves with a working build and the skills to keep building. Your executive sponsor sees it firsthand at the final showcase.
         </p>
 
         <div className="as-section-label">How It Works</div>
@@ -2325,14 +2325,14 @@ function AISprintPage() {
             Cheryl helped our leaders move past curiosity and start using AI on real work. The difference was her ability to translate between manufacturing reality and what AI can actually do. Our team built tools they still use today.
           </div>
           <div className="as-proof-attribution">
-            — <strong>Senior leader</strong>, Tier 1 automotive supplier
+            <strong>Senior leader</strong>, Tier 1 automotive supplier
           </div>
         </div>
 
         <div className="as-about-strip">
           <div className="as-about-label">About Your Facilitator</div>
           <div className="as-about-text">
-            <strong>Cheryl Thompson</strong> brings 33 years of operations and engineering experience at Ford Motor Company and American Axle & Manufacturing, combined with 1,300+ hours of hands-on AI building and implementation. She holds the SuperHuman AI Certified credential and is completing certification through Workplace Culture Lens, which informs how she helps organizations navigate the cultural side of AI adoption. She founded and led a seven-year organization serving 75+ automotive and manufacturing companies, where she trained more than 2,000 professionals on emerging technology adoption. She is not a technologist who learned manufacturing. She is a manufacturing and operations leader who built a serious AI practice — and that difference matters when she is in the room with your team.
+            <strong>Cheryl Thompson</strong> brings 33 years of operations and engineering experience at Ford Motor Company and American Axle & Manufacturing, combined with 1,300+ hours of hands-on AI building and implementation. She holds the SuperHuman AI Certified credential and is completing certification through Workplace Culture Lens, which informs how she helps organizations navigate the cultural side of AI adoption. She founded and led a seven-year organization serving 75+ automotive and manufacturing companies, where she trained more than 2,000 professionals on emerging technology adoption. She is not a technologist who learned manufacturing. She is a manufacturing and operations leader who built a serious AI practice, and that difference matters when she is in the room with your team.
           </div>
         </div>
       </div>
@@ -2353,7 +2353,7 @@ function AISprintPage() {
             cherylthompson.net
           </a>
         </div>
-        <div className="as-cta-seats">Founding cohort · 6–10 companies · $10,000 per company</div>
+        <div className="as-cta-seats">Founding cohort · 6-10 companies · $10,000 per company</div>
       </div>
     </div>
   );
